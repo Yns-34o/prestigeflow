@@ -50,6 +50,15 @@ body {
 ::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: var(--radius-full); }
 ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
 
+/* Hide horizontal scrollbar */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 /* ── PRELOADER ── */
 .preloader {
   position: fixed;
@@ -434,26 +443,6 @@ body {
 
 .gallery-item:hover .gallery-overlay {
   opacity: 1;
-}
-
-/* ── MOBILE NAV ── */
-.mobile-menu {
-  position: fixed;
-  inset: 0;
-  background: rgba(5,5,5,0.98);
-  backdrop-filter: blur(40px);
-  z-index: 999;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 32px;
-  transform: translateX(100%);
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.mobile-menu.open {
-  transform: translateX(0);
 }
 
 /* ── PAGE TRANSITION ── */
