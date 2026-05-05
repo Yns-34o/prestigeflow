@@ -45,7 +45,8 @@ body {
   color: #fff;
 }
 
-::-webkit-scrollbar { width: 5px; }
+/* ── CUSTOM SCROLLBAR ── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: var(--radius-full); }
 ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
