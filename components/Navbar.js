@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion'
 import { Menu, X, ShoppingBag, Sparkles } from 'lucide-react'
@@ -37,7 +37,7 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Main Navigation - Top on All Devices */}
+      {/* Main Navigation - Same Structure on All Devices */}
       <motion.nav
         variants={{ visible: { y: 0 }, hidden: { y: '-100%' } }}
         animate={hidden ? 'hidden' : 'visible'}
@@ -58,9 +58,9 @@ export default function Navbar() {
         />
 
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-          <div className="h-14 md:h-16 lg:h-20 flex items-center justify-between">
+          <div className="h-16 md:h-18 lg:h-20 flex items-center justify-between gap-2 md:gap-4">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2 md:gap-3 group" onClick={() => setMobileOpen(false)}>
+            <Link href="/" className="flex items-center gap-2 md:gap-3 group flex-shrink-0" onClick={() => setMobileOpen(false)}>
               <motion.div
                 whileHover={{ rotate: 180 }}
                 transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
@@ -76,128 +76,80 @@ export default function Navbar() {
               </div>
             </Link>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden xl:flex items-center gap-1">
-              {links.map((link, index) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`relative px-4 md:px-5 py-2 md:py-2.5 text-[10px] md:text-[11px] tracking-[0.15em] md:tracking-[0.2em] uppercase font-medium transition-all duration-400 rounded-full ${
-                    pathname === link.href
-                      ? 'text-[var(--gold)] bg-[rgba(200,169,126,0.08)]'
-                      : 'text-[rgba(255,255,255,0.6)] hover:text-white hover:bg-[rgba(255,255,255,0.05)]'
-                  }`}
-                >
-                  <motion.span
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.05, duration: 0.4 }}
+            {/* Navigation Links - Centered, Scrollable on Small Screens */}
+            <nav className="flex-1 flex items-center justify-center overflow-x-auto scrollbar-hide px-2 md:px-4">
+              <div className="flex items-center gap-1 md:gap-1.5 lg:gap-1">
+                {links.map((link, index) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`relative flex-shrink-0 px-2 md:px-3 lg:px-5 py-1.5 md:py-2 lg:py-2.5 text-[8px] md:text-[9px] lg:text-[11px] tracking-[0.1em] md:tracking-[0.15em] lg:tracking-[0.2em] uppercase font-medium transition-all duration-400 rounded-full ${
+                      pathname === link.href
+                        ? 'text-[var(--gold)] bg-[rgba(200,169,126,0.08)]'
+                        : 'text-[rgba(255,255,255,0.5)] hover:text-white hover:bg-[rgba(255,255,255,0.05)]'
+                    }`}
                   >
-                    {link.label}
-                  </motion.span>
-                  {pathname === link.href && (
-                    <motion.div
-                      layoutId="activeNav"
-                      className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-[var(--gold)] rounded-full"
-                      transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                    />
-                  )}
-                </Link>
-              ))}
+                    <motion.span
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.05, duration: 0.4 }}
+                    >
+                      {link.label}
+                    </motion.span>
+                    {pathname === link.href && (
+                      <motion.div
+                        layoutId="activeNav"
+                        className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-1 h-1 bg-[var(--gold)] rounded-full"
+                        transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                      />
+                    )}
+                  </Link>
+                ))}
+              </div>
             </nav>
 
             {/* Right Actions */}
-            <div className="flex items-center gap-2 md:gap-3 lg:gap-4">
+            <div className="flex items-center gap-2 md:gap-3 lg:gap-4 flex-shrink-0">
               {/* Cart */}
               <motion.button
                 onClick={() => setIsOpen(true)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="relative p-2 md:p-2.5 lg:p-3 rounded-lg md:rounded-xl bg-[rgba(255,255,255,0.03)] border border-[rgba(200,169,126,0.1)] hover:border-[var(--gold)] hover:bg-[rgba(200,169,126,0.08)] transition-all duration-300 group"
+                className="relative p-1.5 md:p-2 lg:p-3 rounded-lg bg-[rgba(255,255,255,0.03)] border border-[rgba(200,169,126,0.1)] hover:border-[var(--gold)] hover:bg-[rgba(200,169,126,0.08)] transition-all duration-300 group"
               >
-                <ShoppingBag size={14} md:size={16} className="text-[rgba(255,255,255,0.6)] group-hover:text-[var(--gold)] transition-colors" />
+                <ShoppingBag size={12} md:size={14} lg:size={16} className="text-[rgba(255,255,255,0.6)] group-hover:text-[var(--gold)] transition-colors" />
                 {count > 0 && (
                   <motion.span
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
-                    className="absolute -top-1 -right-1 min-w-[16px] md:min-w-[18px] h-[16px] md:h-[18px] bg-gradient-to-br from-[var(--gold)] to-[var(--gold-dark)] text-[var(--noir)] text-[8px] md:text-[10px] font-bold flex items-center justify-center rounded-full shadow-[0_2px_10px_rgba(200,169,126,0.4)]"
+                    className="absolute -top-0.5 -right-0.5 min-w-[14px] md:min-w-[16px] lg:min-w-[18px] h-[14px] md:h-[16px] lg:h-[18px] bg-gradient-to-br from-[var(--gold)] to-[var(--gold-dark)] text-[var(--noir)] text-[7px] md:text-[8px] lg:text-[10px] font-bold flex items-center justify-center rounded-full shadow-[0_2px_10px_rgba(200,169,126,0.4)]"
                   >
                     {count}
                   </motion.span>
                 )}
               </motion.button>
 
-              {/* Reservation Button - Desktop */}
+              {/* Reservation Button */}
               <Link
                 href="/reservation"
-                className="hidden xl:flex items-center gap-2 px-4 md:px-5 py-2 md:py-2.5 bg-gradient-to-r from-[var(--gold)] to-[var(--gold-dark)] text-[var(--noir)] text-[9px] md:text-[10px] tracking-[0.15em] md:tracking-[0.2em] uppercase font-semibold rounded-full hover:shadow-[0_4px_20px_rgba(200,169,126,0.4)] transition-all duration-400 hover:-translate-y-0.5"
+                className="hidden md:flex items-center gap-1.5 md:gap-2 px-2.5 md:px-4 lg:px-5 py-1.5 md:py-2 lg:py-2.5 bg-gradient-to-r from-[var(--gold)] to-[var(--gold-dark)] text-[var(--noir)] text-[8px] md:text-[9px] lg:text-[10px] tracking-[0.12em] md:tracking-[0.15em] lg:tracking-[0.2em] uppercase font-semibold rounded-full hover:shadow-[0_4px_20px_rgba(200,169,126,0.4)] transition-all duration-400 hover:-translate-y-0.5"
               >
-                <Sparkles size={10} md:size={12} />
-                Réserver
+                <Sparkles size={8} md:size={10} lg:size={12} />
+                <span className="hidden sm:inline">Réserver</span>
               </Link>
 
-              {/* Mobile/Tablet Menu Toggle */}
+              {/* Mobile Menu Toggle */}
               <motion.button
                 onClick={() => setMobileOpen(true)}
                 whileTap={{ scale: 0.9 }}
-                className="xl:hidden p-2 md:p-2.5 rounded-lg bg-[rgba(255,255,255,0.03)] border border-[rgba(200,169,126,0.1)] hover:border-[var(--gold)] transition-all duration-300"
+                className="md:hidden p-1.5 rounded-lg bg-[rgba(255,255,255,0.03)] border border-[rgba(200,169,126,0.1)] hover:border-[var(--gold)] transition-all duration-300"
               >
-                <Menu size={16} md:size={18} className="text-white" />
+                <Menu size={14} className="text-white" />
               </motion.button>
             </div>
           </div>
-
-          {/* Tablet Navigation - Elegant Horizontal Scroll Below Main Bar */}
-          <nav className="hidden md:flex xl:hidden pb-2 md:pb-3">
-            <div className="flex items-center gap-1 md:gap-1.5 overflow-x-auto scrollbar-hide w-full">
-              {links.map((link, index) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`flex-shrink-0 px-3 md:px-4 py-1.5 md:py-2 text-[9px] md:text-[10px] tracking-[0.12em] md:tracking-[0.15em] uppercase font-medium rounded-full transition-all duration-300 ${
-                    pathname === link.href
-                      ? 'bg-[var(--gold)] text-[var(--noir)] shadow-[0_2px_10px_rgba(200,169,126,0.3)]'
-                      : 'text-[rgba(255,255,255,0.5)] hover:text-[var(--gold)] bg-[rgba(255,255,255,0.03)] hover:bg-[rgba(200,169,126,0.08)] border border-[rgba(200,169,126,0.1)]'
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <Link
-                href="/reservation"
-                className="flex-shrink-0 ml-2 md:ml-3 px-3 md:px-4 py-1.5 md:py-2 bg-gradient-to-r from-[var(--gold)] to-[var(--gold-dark)] text-[var(--noir)] text-[9px] md:text-[10px] tracking-[0.12em] md:tracking-[0.15em] uppercase font-semibold rounded-full shadow-[0_2px_10px_rgba(200,169,126,0.3)]"
-              >
-                Réserver
-              </Link>
-            </div>
-          </nav>
         </div>
       </motion.nav>
-
-      {/* Mobile Navigation Bar - Compact Horizontal Below Main */}
-      <nav className="md:hidden fixed top-14 left-0 right-0 z-40 bg-[rgba(5,5,5,0.95)] backdrop-blur-2xl border-b border-[rgba(200,169,126,0.08)]">
-        <div className="flex items-center gap-1 overflow-x-auto scrollbar-hide px-2 py-2">
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`flex-shrink-0 px-3 py-1.5 text-[9px] tracking-[0.1em] uppercase font-medium rounded-full transition-all duration-300 ${
-                pathname === link.href
-                  ? 'bg-[var(--gold)] text-[var(--noir)] shadow-[0_2px_8px_rgba(200,169,126,0.3)]'
-                  : 'text-[rgba(255,255,255,0.5)] hover:text-[var(--gold)] bg-[rgba(255,255,255,0.03)] hover:bg-[rgba(200,169,126,0.08)] border border-[rgba(200,169,126,0.1)]'
-              }`}
-            >
-              {link.label.split(' ')[0]}
-            </Link>
-          ))}
-          <Link
-            href="/reservation"
-            className="flex-shrink-0 ml-1 px-3 py-1.5 bg-gradient-to-r from-[var(--gold)] to-[var(--gold-dark)] text-[var(--noir)] text-[9px] tracking-[0.1em] uppercase font-semibold rounded-full shadow-[0_2px_8px_rgba(200,169,126,0.3)]"
-          >
-            Réserver
-          </Link>
-        </div>
-      </nav>
 
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
