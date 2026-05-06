@@ -1,7 +1,1 @@
-{
-  "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js",
-  "/": "pages/index.js",
-  "/menu": "pages/menu.js"
-}
+{"/_app":"pages/_app.js","/_error":"pages/_error.js","/_document":"pages/_document.js","/admin/dashboard":"pages/admin/dashboard.html","/about":"pages/about.html","/admin":"pages/admin.html","/api/admin-auth":"pages/api/admin-auth.js","/admin/menu":"pages/admin/menu.html","/api/checkout":"pages/api/checkout.js","/admin/orders":"pages/admin/orders.html","/api/orders":"pages/api/orders.js","/cart":"pages/cart.html","/contact":"pages/contact.html","/gallery":"pages/gallery.html","/":"pages/index.html","/menu":"pages/menu.html","/reservation":"pages/reservation.html","/404":"pages/404.html"}
