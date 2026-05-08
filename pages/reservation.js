@@ -15,7 +15,7 @@ function Reveal({ children, delay = 0, className = '' }) {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-60px' })
   return (
-    <motion.div ref={ref} initial={{ opacity: 0, y: 40 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7, delay, ease: [0.4, 0, 0.2, 1] }} className={className}>
+    <motion.div ref={ref} initial={{ opacity: 0, y: 32 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay, ease: [0.4, 0, 0.2, 1] }} className={className}>
       {children}
     </motion.div>
   )
@@ -57,34 +57,34 @@ export default function ReservationPage() {
       <section className="relative h-[50vh] min-h-[400px] overflow-hidden">
         <div className="absolute inset-0">
           <img src="https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=1920&q=80" alt="Restaurant ambiance" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[rgba(10,10,10,0.5)] to-[rgba(10,10,10,0.95)]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[rgba(10,10,10,0.4)] to-[rgba(10,10,10,0.95)]" />
         </div>
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 pt-20">
           <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} className="text-[var(--gold)] text-xs tracking-[0.3em] uppercase">
             Réservation
           </motion.span>
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
+            transition={{ delay: 0.4, duration: 0.7 }}
             className="font-display text-3xl md:text-5xl lg:text-7xl text-white mt-4 mb-4"
           >
             Votre <span className="italic text-gradient-gold">Table</span>
           </motion.h1>
-          <motion.div initial={{ width: 0 }} animate={{ width: 120 }} transition={{ delay: 0.8, duration: 0.8 }} className="h-[1px] bg-gradient-to-r from-transparent via-[var(--gold)] to-transparent" />
+          <motion.div initial={{ width: 0 }} animate={{ width: 120 }} transition={{ delay: 0.7, duration: 0.7 }} className="h-[1px] bg-gradient-to-r from-transparent via-[var(--gold)] to-transparent" />
         </div>
       </section>
 
       {submitted ? (
         <section className="section-padding bg-[var(--noir)]">
           <div className="max-w-lg mx-auto px-6 text-center">
-            <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: 'spring', duration: 0.8 }}>
+            <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: 'spring', duration: 0.6 }}>
               <div className="w-20 h-20 mx-auto mb-6 border-2 border-[var(--gold)] flex items-center justify-center">
                 <Check size={32} className="text-[var(--gold)]" />
               </div>
             </motion.div>
             <h2 className="font-display text-3xl text-white mb-4">Réservation Confirmée</h2>
-            <p className="text-[rgba(255,255,255,0.5)] leading-relaxed mb-8">
+            <p className="text-[var(--text-secondary)] leading-relaxed mb-8">
               Merci, {form.name}. Votre table pour {form.guests} personne{parseInt(form.guests) > 1 ? 's' : ''} le{' '}
               {form.date} à {form.time} a été réservée avec succès.
               Vous recevrez un email de confirmation à {form.email}.
@@ -104,7 +104,7 @@ export default function ReservationPage() {
                 </h3>
 
                 <div className="mb-8">
-                  <label className="text-[rgba(255,255,255,0.5)] text-xs tracking-[0.2em] uppercase mb-3 block">Date</label>
+                  <label className="text-[var(--text-secondary)] text-xs tracking-[0.2em] uppercase mb-3 block">Date</label>
                   <input
                     type="date"
                     required
@@ -202,7 +202,7 @@ export default function ReservationPage() {
                 <button type="submit" className="btn-gold text-base px-12 py-4">
                   Confirmer la réservation <ArrowRight size={16} />
                 </button>
-                <p className="text-[rgba(255,255,255,0.3)] text-xs mt-4">
+                <p className="text-[var(--text-muted)] text-xs mt-4">
                   Réservation gratuite. Annulation possible jusqu&apos;à 24h avant.
                 </p>
               </Reveal>
@@ -212,7 +212,7 @@ export default function ReservationPage() {
       )}
 
       {/* Info Section */}
-      <section className="py-16 bg-[var(--noir-light)] border-t border-[rgba(200,169,126,0.06)]">
+      <section className="py-16 bg-[var(--noir-light)] border-t border-white/5">
         <div className="max-w-4xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <Reveal>
@@ -220,24 +220,24 @@ export default function ReservationPage() {
                 <Calendar size={20} className="text-[var(--gold)]" />
               </div>
               <h4 className="font-display text-lg text-white mb-2">Horaires</h4>
-              <p className="text-[rgba(255,255,255,0.4)] text-sm">Lun — Ven : 12h-14h30 / 19h-23h</p>
-              <p className="text-[rgba(255,255,255,0.4)] text-sm">Sam — Dim : 12h-15h / 19h-00h</p>
+              <p className="text-[var(--text-tertiary)] text-sm">Lun — Ven : 12h-14h30 / 19h-23h</p>
+              <p className="text-[var(--text-tertiary)] text-sm">Sam — Dim : 12h-15h / 19h-00h</p>
             </Reveal>
             <Reveal delay={0.1}>
               <div className="w-12 h-12 mx-auto mb-4 border border-[var(--gold)] rounded-xl flex items-center justify-center">
                 <Users size={20} className="text-[var(--gold)]" />
               </div>
               <h4 className="font-display text-lg text-white mb-2">Groupes</h4>
-              <p className="text-[rgba(255,255,255,0.4)] text-sm">Salon privé disponible pour</p>
-              <p className="text-[rgba(255,255,255,0.4)] text-sm">des groupes de 8 à 30 personnes</p>
+              <p className="text-[var(--text-tertiary)] text-sm">Salon privé disponible pour</p>
+              <p className="text-[var(--text-tertiary)] text-sm">des groupes de 8 à 30 personnes</p>
             </Reveal>
             <Reveal delay={0.2}>
               <div className="w-12 h-12 mx-auto mb-4 border border-[var(--gold)] rounded-xl flex items-center justify-center">
                 <Clock size={20} className="text-[var(--gold)]" />
               </div>
               <h4 className="font-display text-lg text-white mb-2">Dress Code</h4>
-              <p className="text-[rgba(255,255,255,0.4)] text-sm">Tenue élégante requise.</p>
-              <p className="text-[rgba(255,255,255,0.4)] text-sm">Veste recommandée pour les messieurs.</p>
+              <p className="text-[var(--text-tertiary)] text-sm">Tenue élégante requise.</p>
+              <p className="text-[var(--text-tertiary)] text-sm">Veste recommandée pour les messieurs.</p>
             </Reveal>
           </div>
         </div>

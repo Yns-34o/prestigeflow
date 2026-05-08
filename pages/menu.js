@@ -48,19 +48,18 @@ function MenuItemCard({ item, delay }) {
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 32 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.7, delay, ease: [0.25, 0.46, 0.45, 0.94] }}
+      transition={{ duration: 0.6, delay, ease: [0.25, 0.46, 0.45, 0.94] }}
       className="glass-card overflow-hidden group"
     >
       <div className="relative overflow-hidden aspect-[4/3]">
         <img
           src={item.img}
           alt={item.name}
-          className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
+          className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105 group-hover:brightness-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[rgba(5,5,5,0.9)] via-[rgba(5,5,5,0.15)] to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[rgba(5,5,5,0.85)] via-[rgba(5,5,5,0.15)] to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[rgba(10,10,10,0.9)] via-[rgba(10,10,10,0.2)] to-transparent" />
         {item.tag && (
           <span className="absolute top-4 left-4 badge-gold backdrop-blur-md">
             <span className="badge-dot" /> {item.tag}
@@ -73,20 +72,20 @@ function MenuItemCard({ item, delay }) {
 
       <div className="p-6">
         <h3 className="font-display text-xl text-white group-hover:text-[var(--gold)] transition-colors duration-300 mb-2">{item.name}</h3>
-        <p className="text-[rgba(255,255,255,0.35)] text-sm leading-relaxed mb-6">{item.desc}</p>
+        <p className="text-[var(--text-secondary)] text-sm leading-[1.7] mb-6">{item.desc}</p>
 
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <button
               onClick={() => setQty(q => Math.max(1, q - 1))}
-              className="w-10 h-10 md:w-8 md:h-8 border border-[rgba(200,169,126,0.1)] rounded-lg flex items-center justify-center text-[rgba(255,255,255,0.3)] hover:border-[var(--gold)] hover:text-[var(--gold)] transition-all"
+              className="w-10 h-10 md:w-8 md:h-8 border border-white/10 rounded-lg flex items-center justify-center text-[var(--text-tertiary)] hover:border-[var(--gold)] hover:text-[var(--gold)] transition-all"
             >
               <Minus size={12} />
             </button>
             <span className="text-sm w-5 text-center text-white font-medium">{qty}</span>
             <button
               onClick={() => setQty(q => q + 1)}
-              className="w-10 h-10 md:w-8 md:h-8 border border-[rgba(200,169,126,0.1)] rounded-lg flex items-center justify-center text-[rgba(255,255,255,0.3)] hover:border-[var(--gold)] hover:text-[var(--gold)] transition-all"
+              className="w-10 h-10 md:w-8 md:h-8 border border-white/10 rounded-lg flex items-center justify-center text-[var(--text-tertiary)] hover:border-[var(--gold)] hover:text-[var(--gold)] transition-all"
             >
               <Plus size={12} />
             </button>
@@ -132,31 +131,31 @@ export default function MenuPage() {
       <section className="relative h-[55vh] min-h-[350px] md:min-h-[450px] overflow-hidden">
         <div className="absolute inset-0">
           <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1920&q=80" alt="Culinary creations" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[rgba(5,5,5,0.5)] to-[rgba(5,5,5,0.97)]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[rgba(10,10,10,0.4)] to-[rgba(10,10,10,0.95)]" />
         </div>
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 pt-20">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
+          <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
             <span className="text-[var(--gold)] text-[10px] tracking-[0.4em] uppercase flex items-center justify-center gap-3">
               <div className="w-8 h-[1px] bg-[var(--gold)]" /> Gastronomie <div className="w-8 h-[1px] bg-[var(--gold)]" />
             </span>
           </motion.div>
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 1 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
             className="font-display text-3xl md:text-5xl lg:text-[5rem] text-white mt-6 mb-5"
           >
             La <span className="italic text-gradient-gold">Carte</span>
           </motion.h1>
-          <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ delay: 1, duration: 0.8 }} className="h-[1px] w-[140px] bg-gradient-to-r from-transparent via-[var(--gold)] to-transparent" />
+          <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ delay: 0.9, duration: 0.7 }} className="h-[1px] w-[140px] bg-gradient-to-r from-transparent via-[var(--gold)] to-transparent" />
         </div>
       </section>
 
       {/* Category Filter */}
-      <section className="bg-[var(--noir)] border-b border-[rgba(200,169,126,0.04)]">
+      <section className="bg-[var(--noir)] border-b border-white/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-center gap-2 flex-wrap py-6">
-            <Filter size={15} className="text-[var(--gold)] mr-1 flex-shrink-0" />
+            <Filter size={14} className="text-[var(--gold)] mr-1 flex-shrink-0" />
             {categories.map(cat => (
               <button
                 key={cat}
@@ -164,7 +163,7 @@ export default function MenuPage() {
                 className={`px-4 py-2 md:px-6 md:py-2.5 text-[11px] tracking-[0.2em] uppercase whitespace-nowrap transition-all duration-300 ${
                   activeCategory === cat
                     ? 'bg-[var(--gold)] text-[var(--noir)] font-semibold shadow-[0_4px_20px_rgba(200,169,126,0.2)] rounded-full'
-                    : 'text-[rgba(255,255,255,0.35)] hover:text-white border border-[rgba(200,169,126,0.08)] hover:border-[rgba(200,169,126,0.2)] rounded-full'
+                    : 'text-[var(--text-secondary)] hover:text-white border border-white/10 hover:border-white/20 rounded-full'
                 }`}
               >
                 {cat}
@@ -180,14 +179,14 @@ export default function MenuPage() {
           <AnimatePresence mode="wait">
             <motion.div
               key={activeCategory}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5 }}
+              exit={{ opacity: 0, y: -16 }}
+              transition={{ duration: 0.4 }}
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7"
             >
               {filtered.map((item, i) => (
-                <MenuItemCard key={item.id} item={item} delay={i * 0.07} />
+                <MenuItemCard key={item.id} item={item} delay={i * 0.07 } />
               ))}
             </motion.div>
           </AnimatePresence>
@@ -197,9 +196,9 @@ export default function MenuPage() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="mt-16 pt-10 border-t border-[rgba(200,169,126,0.05)] text-center"
+            className="mt-16 pt-10 border-t border-white/5 text-center"
           >
-            <p className="text-[rgba(255,255,255,0.25)] text-[12px] tracking-[0.15em] uppercase flex items-center justify-center gap-2">
+            <p className="text-[var(--text-muted)] text-[12px] tracking-[0.15em] uppercase flex items-center justify-center gap-2">
               <Sparkles size={12} className="text-[var(--gold)]" />
               Nos plats évoluent au fil des saisons et de l&apos;inspiration du Chef
               <Sparkles size={12} className="text-[var(--gold)]" />

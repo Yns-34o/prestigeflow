@@ -8,7 +8,7 @@ function Reveal({ children, delay = 0, className = '' }) {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-60px' })
   return (
-    <motion.div ref={ref} initial={{ opacity: 0, y: 40 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7, delay, ease: [0.4, 0, 0.2, 1] }} className={className}>
+    <motion.div ref={ref} initial={{ opacity: 0, y: 32 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay, ease: [0.4, 0, 0.2, 1] }} className={className}>
       {children}
     </motion.div>
   )
@@ -61,16 +61,16 @@ export default function AboutPage() {
       <section className="relative h-[60vh] min-h-[350px] md:min-h-[500px] overflow-hidden">
         <div className="absolute inset-0">
           <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=1920&q=80" alt="Chef cooking" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[rgba(10,10,10,0.4)] to-[rgba(10,10,10,0.95)]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[rgba(10,10,10,0.3)] to-[rgba(10,10,10,0.95)]" />
         </div>
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 pt-20">
           <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} className="text-[var(--gold)] text-xs tracking-[0.3em] uppercase">
             Notre Histoire
           </motion.span>
-          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.8 }} className="font-display text-3xl md:text-5xl lg:text-7xl text-white mt-4 mb-4">
+          <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.7 }} className="font-display text-3xl md:text-5xl lg:text-7xl text-white mt-4 mb-4">
             La <span className="italic text-gradient-gold">Saga</span> PrestigeFlow
           </motion.h1>
-          <motion.div initial={{ width: 0 }} animate={{ width: 120 }} transition={{ delay: 0.8, duration: 0.8 }} className="h-[1px] bg-gradient-to-r from-transparent via-[var(--gold)] to-transparent" />
+          <motion.div initial={{ width: 0 }} animate={{ width: 120 }} transition={{ delay: 0.7, duration: 0.7 }} className="h-[1px] bg-gradient-to-r from-transparent via-[var(--gold)] to-transparent" />
         </div>
       </section>
 
@@ -80,7 +80,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
             <Reveal>
               <div className="relative">
-                <div className="absolute -inset-4 border border-[rgba(200,169,126,0.1)]" />
+                <div className="absolute -inset-4 border border-white/5" />
                 <div className="relative overflow-hidden aspect-square">
                   <img src="https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=800&q=80" alt="Restaurant" className="w-full h-full object-cover" />
                 </div>
@@ -97,15 +97,15 @@ export default function AboutPage() {
               </Reveal>
               <Reveal delay={0.2}>
                 <div className="divider-gold mb-6" />
-                <p className="text-[rgba(255,255,255,0.5)] leading-relaxed mb-4">
+                <p className="text-[var(--text-secondary)] leading-relaxed mb-4">
                   En 1987, Pierre Montfort transforme un hôtel particulier du 8ème arrondissement de Paris en un sanctuaire
                   de la gastronomie française. Sa philosophie est simple : ne jamais transiger sur la qualité.
                 </p>
-                <p className="text-[rgba(255,255,255,0.5)] leading-relaxed mb-4">
+                <p className="text-[var(--text-secondary)] leading-relaxed mb-4">
                   Trois décennies plus tard, son fils Alexandre perpétue cet héritage avec la même exigence et une créativité
                   qui a valu à PrestigeFlow trois étoiles Michelin et une place parmi les plus grandes tables de France.
                 </p>
-                <p className="text-[rgba(255,255,255,0.5)] leading-relaxed">
+                <p className="text-[var(--text-secondary)] leading-relaxed">
                   Aujourd&apos;hui, PrestigeFlow continue de repousser les frontières de l&apos;excellence culinaire,
                   en alliant tradition et innovation au service d&apos;une expérience gastronomique unique.
                 </p>
@@ -130,7 +130,7 @@ export default function AboutPage() {
           </Reveal>
 
           <div className="relative">
-            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[1px] bg-[rgba(200,169,126,0.15)]" />
+            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[1px] bg-white/10" />
 
             {timeline.map((item, i) => (
               <Reveal key={item.year} delay={i * 0.1}>
@@ -140,7 +140,7 @@ export default function AboutPage() {
                   <div className="flex-1 pl-8 md:pl-0">
                     <span className="font-display text-3xl text-[var(--gold)]">{item.year}</span>
                     <h3 className="font-display text-xl text-white mt-1 mb-2">{item.title}</h3>
-                    <p className="text-[rgba(255,255,255,0.4)] text-sm leading-relaxed">{item.desc}</p>
+                    <p className="text-[var(--text-tertiary)] text-sm leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               </Reveal>
@@ -168,7 +168,7 @@ export default function AboutPage() {
                     <v.icon size={24} className="text-[var(--gold)]" />
                   </div>
                   <h3 className="font-display text-xl text-white mb-3">{v.title}</h3>
-                  <p className="text-[rgba(255,255,255,0.4)] text-sm leading-relaxed">{v.desc}</p>
+                  <p className="text-[var(--text-tertiary)] text-sm leading-relaxed">{v.desc}</p>
                 </div>
               </Reveal>
             ))}
@@ -177,11 +177,11 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-12 md:py-20 bg-[var(--noir-light)] border-t border-[rgba(200,169,126,0.06)]">
+      <section className="py-12 md:py-20 bg-[var(--noir-light)] border-t border-white/5">
         <div className="max-w-2xl mx-auto px-6 text-center">
           <Reveal>
             <h3 className="font-display text-3xl md:text-4xl text-white mb-4">Vivez l&apos;expérience</h3>
-            <p className="text-[rgba(255,255,255,0.4)] mb-8">
+            <p className="text-[var(--text-secondary)] mb-8">
               Découvrez par vous-même ce qui fait de PrestigeFlow une institution de la gastronomie parisienne.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

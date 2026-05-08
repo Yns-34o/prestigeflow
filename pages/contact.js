@@ -7,7 +7,7 @@ function Reveal({ children, delay = 0, className = '' }) {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-60px' })
   return (
-    <motion.div ref={ref} initial={{ opacity: 0, y: 40 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7, delay, ease: [0.4, 0, 0.2, 1] }} className={className}>
+    <motion.div ref={ref} initial={{ opacity: 0, y: 32 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay, ease: [0.4, 0, 0.2, 1] }} className={className}>
       {children}
     </motion.div>
   )
@@ -34,14 +34,14 @@ export default function ContactPage() {
       <section className="relative h-[50vh] min-h-[400px] overflow-hidden">
         <div className="absolute inset-0">
           <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=1920&q=80" alt="Contact" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[rgba(10,10,10,0.5)] to-[rgba(10,10,10,0.95)]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[rgba(10,10,10,0.4)] to-[rgba(10,10,10,0.95)]" />
         </div>
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 pt-20">
           <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} className="text-[var(--gold)] text-xs tracking-[0.3em] uppercase">Contact</motion.span>
-          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.8 }} className="font-display text-3xl md:text-5xl lg:text-7xl text-white mt-4 mb-4">
+          <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.7 }} className="font-display text-3xl md:text-5xl lg:text-7xl text-white mt-4 mb-4">
             Nous <span className="italic text-gradient-gold">Contacter</span>
           </motion.h1>
-          <motion.div initial={{ width: 0 }} animate={{ width: 120 }} transition={{ delay: 0.8, duration: 0.8 }} className="h-[1px] bg-gradient-to-r from-transparent via-[var(--gold)] to-transparent" />
+          <motion.div initial={{ width: 0 }} animate={{ width: 120 }} transition={{ delay: 0.7, duration: 0.7 }} className="h-[1px] bg-gradient-to-r from-transparent via-[var(--gold)] to-transparent" />
         </div>
       </section>
 
@@ -58,61 +58,61 @@ export default function ContactPage() {
               <div className="flex flex-col gap-6">
                 <Reveal delay={0.1}>
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 border border-[rgba(200,169,126,0.2)] rounded-xl flex items-center justify-center flex-shrink-0">
+                    <div className="w-10 h-10 border border-white/10 rounded-xl flex items-center justify-center flex-shrink-0">
                       <MapPin size={16} className="text-[var(--gold)]" />
                     </div>
                     <div>
                       <h4 className="text-white text-sm font-medium mb-1">Adresse</h4>
-                      <p className="text-[rgba(255,255,255,0.4)] text-sm">42 Avenue des Champs-Élysées</p>
-                      <p className="text-[rgba(255,255,255,0.4)] text-sm">75008 Paris, France</p>
+                      <p className="text-[var(--text-tertiary)] text-sm">42 Avenue des Champs-Élysées</p>
+                      <p className="text-[var(--text-tertiary)] text-sm">75008 Paris, France</p>
                     </div>
                   </div>
                 </Reveal>
 
                 <Reveal delay={0.15}>
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 border border-[rgba(200,169,126,0.2)] rounded-xl flex items-center justify-center flex-shrink-0">
+                    <div className="w-10 h-10 border border-white/10 rounded-xl flex items-center justify-center flex-shrink-0">
                       <Phone size={16} className="text-[var(--gold)]" />
                     </div>
                     <div>
                       <h4 className="text-white text-sm font-medium mb-1">Téléphone</h4>
-                      <a href="tel:+33142689900" className="text-[rgba(255,255,255,0.4)] text-sm hover:text-[var(--gold)] transition-colors">+33 1 42 68 99 00</a>
+                      <a href="tel:+33142689900" className="text-[var(--text-tertiary)] text-sm hover:text-[var(--gold)] transition-colors">+33 1 42 68 99 00</a>
                     </div>
                   </div>
                 </Reveal>
 
                 <Reveal delay={0.2}>
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 border border-[rgba(200,169,126,0.2)] rounded-xl flex items-center justify-center flex-shrink-0">
+                    <div className="w-10 h-10 border border-white/10 rounded-xl flex items-center justify-center flex-shrink-0">
                       <Mail size={16} className="text-[var(--gold)]" />
                     </div>
                     <div>
                       <h4 className="text-white text-sm font-medium mb-1">Email</h4>
-                      <p className="text-[rgba(255,255,255,0.4)] text-sm">contact@prestigeflow.fr</p>
-                      <p className="text-[rgba(255,255,255,0.4)] text-sm">reservation@prestigeflow.fr</p>
+                      <p className="text-[var(--text-tertiary)] text-sm">contact@prestigeflow.fr</p>
+                      <p className="text-[var(--text-tertiary)] text-sm">reservation@prestigeflow.fr</p>
                     </div>
                   </div>
                 </Reveal>
 
                 <Reveal delay={0.25}>
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 border border-[rgba(200,169,126,0.2)] rounded-xl flex items-center justify-center flex-shrink-0">
+                    <div className="w-10 h-10 border border-white/10 rounded-xl flex items-center justify-center flex-shrink-0">
                       <Clock size={16} className="text-[var(--gold)]" />
                     </div>
                     <div>
                       <h4 className="text-white text-sm font-medium mb-1">Horaires</h4>
-                      <p className="text-[rgba(255,255,255,0.4)] text-sm">Lun — Ven : 12h-14h30 / 19h-23h</p>
-                      <p className="text-[rgba(255,255,255,0.4)] text-sm">Sam — Dim : 12h-15h / 19h-00h</p>
+                      <p className="text-[var(--text-tertiary)] text-sm">Lun — Ven : 12h-14h30 / 19h-23h</p>
+                      <p className="text-[var(--text-tertiary)] text-sm">Sam — Dim : 12h-15h / 19h-00h</p>
                     </div>
                   </div>
                 </Reveal>
 
                 <Reveal delay={0.3}>
                   <div className="flex gap-3 mt-4">
-                    <a href="#" className="w-10 h-10 border border-[rgba(200,169,126,0.15)] rounded-xl flex items-center justify-center text-[rgba(255,255,255,0.4)] hover:text-[var(--gold)] hover:border-[var(--gold)] transition-all">
+                    <a href="#" className="w-10 h-10 border border-white/10 rounded-xl flex items-center justify-center text-[var(--text-tertiary)] hover:text-[var(--gold)] hover:border-[var(--gold)] transition-all">
                       <Camera size={16} />
                     </a>
-                    <a href="#" className="w-10 h-10 border border-[rgba(200,169,126,0.15)] rounded-xl flex items-center justify-center text-[rgba(255,255,255,0.4)] hover:text-[var(--gold)] hover:border-[var(--gold)] transition-all">
+                    <a href="#" className="w-10 h-10 border border-white/10 rounded-xl flex items-center justify-center text-[var(--text-tertiary)] hover:text-[var(--gold)] hover:border-[var(--gold)] transition-all">
                       <Globe size={16} />
                     </a>
                   </div>
@@ -132,7 +132,7 @@ export default function ContactPage() {
                         </div>
                       </motion.div>
                       <h3 className="font-display text-2xl text-white mb-3">Message Envoyé</h3>
-                      <p className="text-[rgba(255,255,255,0.5)]">Nous vous répondrons dans les plus brefs délais.</p>
+                      <p className="text-[var(--text-secondary)]">Nous vous répondrons dans les plus brefs délais.</p>
                     </div>
                   ) : (
                     <form onSubmit={(e) => { e.preventDefault(); setSent(true) }}>
@@ -140,7 +140,7 @@ export default function ContactPage() {
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
                         <div>
-                          <label className="text-[rgba(255,255,255,0.4)] text-xs tracking-[0.15em] uppercase mb-2 block">Nom</label>
+                          <label className="text-[var(--text-secondary)] text-xs tracking-[0.15em] uppercase mb-2 block">Nom</label>
                           <input type="text" required value={form.name} onChange={e => update('name', e.target.value)} className="input-luxury" placeholder="Votre nom" />
                         </div>
                         <div>
@@ -171,7 +171,7 @@ export default function ContactPage() {
 
           {/* Map placeholder */}
           <Reveal className="mt-16">
-            <div className="relative h-[280px] md:h-[400px] bg-[var(--noir-card)] border border-[rgba(200,169,126,0.08)] overflow-hidden">
+            <div className="relative h-[280px] md:h-[400px] bg-[var(--noir-card)] border border-white/5 overflow-hidden">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.215!2d2.305!3d48.8698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fc4d0bd5679%3A0x1f7e25674e0a9b50!2sChamps-%C3%89lys%C3%A9es!5e0!3m2!1sfr!2sfr!4v1234567890"
                 width="100%"

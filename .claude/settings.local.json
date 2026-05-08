@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(npx tsc *)",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Bash(sed -i \"403s/text-\\\\[var\\(--gold-subtle\\)\\\\]/text-white\\\\/20/\" \"c:/Users/User/Desktop/PrestigeFlow-Site/pages/index.js\")",
+      "Bash(sed -i \"403s/fill=\\\\${s < t.stars ? 'var\\(--gold\\)' : 'none'}/fill=\\\\${s < t.stars ? 'currentColor' : 'none'}/\" \"c:/Users/User/Desktop/PrestigeFlow-Site/pages/index.js\")"
     ]
   }
 }

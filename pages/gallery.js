@@ -61,21 +61,21 @@ export default function GalleryPage() {
       <section className="relative h-[50vh] min-h-[400px] overflow-hidden">
         <div className="absolute inset-0">
           <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&q=80" alt="Gallery hero" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[rgba(10,10,10,0.5)] to-[rgba(10,10,10,0.95)]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[rgba(10,10,10,0.4)] to-[rgba(10,10,10,0.95)]" />
         </div>
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 pt-20">
           <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} className="text-[var(--gold)] text-xs tracking-[0.3em] uppercase">
             Ambiance
           </motion.span>
-          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.8 }} className="font-display text-3xl md:text-5xl lg:text-7xl text-white mt-4 mb-4">
+          <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.7 }} className="font-display text-3xl md:text-5xl lg:text-7xl text-white mt-4 mb-4">
             Notre <span className="italic text-gradient-gold">Galerie</span>
           </motion.h1>
-          <motion.div initial={{ width: 0 }} animate={{ width: 120 }} transition={{ delay: 0.8, duration: 0.8 }} className="h-[1px] bg-gradient-to-r from-transparent via-[var(--gold)] to-transparent" />
+          <motion.div initial={{ width: 0 }} animate={{ width: 120 }} transition={{ delay: 0.7, duration: 0.7 }} className="h-[1px] bg-gradient-to-r from-transparent via-[var(--gold)] to-transparent" />
         </div>
       </section>
 
       {/* Filter */}
-      <section className="bg-[var(--noir)] border-b border-[rgba(200,169,126,0.06)]">
+      <section className="bg-[var(--noir)] border-b border-white/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-center gap-1 flex-wrap py-5">
             {categories.map(cat => (
@@ -83,7 +83,7 @@ export default function GalleryPage() {
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
                 className={`px-5 py-2 text-[12px] tracking-[0.15em] uppercase whitespace-nowrap transition-all duration-300 rounded-full ${
-                  activeCategory === cat ? 'bg-[var(--gold)] text-[var(--noir)] font-medium' : 'text-[rgba(255,255,255,0.4)] hover:text-white'
+                  activeCategory === cat ? 'bg-[var(--gold)] text-[var(--noir)] font-medium' : 'text-[var(--text-secondary)] hover:text-white'
                 }`}
               >
                 {cat}

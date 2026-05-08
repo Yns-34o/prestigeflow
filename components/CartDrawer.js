@@ -15,74 +15,78 @@ export default function CartDrawer() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setIsOpen(false)}
-            className="fixed inset-0 bg-black/70 backdrop-blur-md z-[998]"
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[998]"
           />
           <motion.div
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'spring', damping: 28, stiffness: 280 }}
-            className="fixed top-0 right-0 h-full w-full max-w-[420px] bg-gradient-to-b from-[#0c0c0c] to-[#080808] border-l border-[rgba(200,169,126,0.08)] z-[999] flex flex-col md:rounded-l-2xl"
+            className="fixed top-0 right-0 h-full w-full max-w-[400px] bg-[var(--noir-light)] border-l border-white/5 z-[999] flex flex-col"
           >
             {/* Header */}
-            <div className="flex items-center justify-between px-7 py-6 border-b border-[rgba(200,169,126,0.06)]">
+            <div className="flex items-center justify-between px-6 py-5 border-b border-white/5">
               <div className="flex items-center gap-3">
-                <ShoppingBag size={18} className="text-[var(--gold)]" />
-                <h3 className="font-display text-xl tracking-wider">Votre Panier</h3>
-                <span className="badge-gold !py-0.5 !px-2">{count}</span>
+                <ShoppingBag size={16} className="text-[var(--gold)]" />
+                <h3 className="font-display text-lg tracking-wide">Votre Panier</h3>
+                {count > 0 && (
+                  <span className="ml-2 px-2 py-0.5 bg-[var(--gold)]/10 text-[var(--gold)] text-[10px] tracking-wider uppercase rounded-full">
+                    {count}
+                  </span>
+                )}
               </div>
-              <button onClick={() => setIsOpen(false)} className="text-[rgba(255,255,255,0.3)] hover:text-white transition-colors p-1">
-                <X size={20} />
+              <button onClick={() => setIsOpen(false)} className="text-[var(--text-secondary)] hover:text-white transition-colors p-1">
+                <X size={18} />
               </button>
             </div>
 
             {/* Items */}
-            <div className="flex-1 overflow-y-auto px-7 py-5">
+            <div className="flex-1 overflow-y-auto px-6 py-4">
               {items.length === 0 ? (
                 <div className="flex flex-col items-center justify-center h-full text-center">
-                  <div className="w-20 h-20 border border-[rgba(200,169,126,0.1)] flex items-center justify-center mb-5">
-                    <ShoppingBag size={32} className="text-[rgba(200,169,126,0.15)]" />
+                  <div className="w-16 h-16 border border-white/10 flex items-center justify-center mb-4">
+                    <ShoppingBag size={24} className="text-[var(--text-muted)]" />
                   </div>
-                  <p className="text-[rgba(255,255,255,0.35)] mb-2 font-display text-lg">Votre panier est vide</p>
-                  <p className="text-[rgba(255,255,255,0.2)] text-xs tracking-wider mb-6">Découvrez nos créations culinaires</p>
-                  <Link href="/menu" onClick={() => setIsOpen(false)} className="btn-outline !py-2.5 !px-6 !text-[11px]">
+                  <p className="text-[var(--text-secondary)] mb-1 font-display text-base">Votre panier est vide</p>
+                  <p className="text-[var(--text-muted)] text-xs tracking-wider mb-6">Découvrez nos créations culinaires</p>
+                  <Link href="/menu" onClick={() => setIsOpen(false)} className="btn-outline !py-2 !px-5 !text-[10px]">
                     Explorer la carte
                   </Link>
                 </div>
               ) : (
-                <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-3">
                   {items.map(item => (
                     <motion.div
                       key={item.id}
                       layout
-                      initial={{ opacity: 0, x: 30 }}
+                      initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: -30, height: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="flex gap-4 p-4 bg-[rgba(255,255,255,0.02)] border border-[rgba(200,169,126,0.06)] hover:border-[rgba(200,169,126,0.12)] transition-all group"
+                      exit={{ opacity: 0, x: -20, height: 0 }}
+                      transition={{ duration: 0.25 }}
+                      className="flex gap-3 p-3 bg-white/[0.02] rounded-lg hover:bg-white/[0.04] transition-colors"
                     >
-                      <div className="w-20 h-20 flex-shrink-0 overflow-hidden">
-                        <img src={item.image} alt={item.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                      <div className="w-16 h-16 flex-shrink-0 overflow-hidden rounded-md">
+                        <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
                       </div>
                       <div className="flex-1 min-w-0 flex flex-col justify-between">
                         <div className="flex items-start justify-between">
-                          <h4 className="text-[13px] font-medium text-white truncate pr-2">{item.name}</h4>
-                          <button onClick={() => removeItem(item.id)} className="text-[rgba(255,255,255,0.2)] hover:text-red-400 transition-colors flex-shrink-0">
-                            <X size={14} />
+                          <h4 className="text-sm font-medium text-white truncate pr-2">{item.name}</h4>
+                          <button onClick={() => removeItem(item.id)} className="text-[var(--text-muted)] hover:text-red-400 transition-colors flex-shrink-0">
+                            <X size={12} />
                           </button>
                         </div>
                         <div className="flex items-center justify-between mt-2">
                           <div className="flex items-center gap-2">
                             <button
                               onClick={() => updateQty(item.id, item.qty - 1)}
-                              className="w-8 h-8 md:w-6 md:h-6 border border-[rgba(200,169,126,0.1)] flex items-center justify-center text-[rgba(255,255,255,0.3)] hover:border-[var(--gold)] hover:text-[var(--gold)] transition-all text-[10px]"
+                              className="w-7 h-7 border border-white/10 rounded-md flex items-center justify-center text-[var(--text-secondary)] hover:border-[var(--gold)] hover:text-[var(--gold)] transition-colors text-[10px]"
                             >
                               <Minus size={10} />
                             </button>
-                            <span className="text-xs w-5 text-center text-white">{item.qty}</span>
+                            <span className="text-xs w-4 text-center text-white">{item.qty}</span>
                             <button
                               onClick={() => updateQty(item.id, item.qty + 1)}
-                              className="w-8 h-8 md:w-6 md:h-6 border border-[rgba(200,169,126,0.1)] flex items-center justify-center text-[rgba(255,255,255,0.3)] hover:border-[var(--gold)] hover:text-[var(--gold)] transition-all text-[10px]"
+                              className="w-7 h-7 border border-white/10 rounded-md flex items-center justify-center text-[var(--text-secondary)] hover:border-[var(--gold)] hover:text-[var(--gold)] transition-colors text-[10px]"
                             >
                               <Plus size={10} />
                             </button>
@@ -98,26 +102,26 @@ export default function CartDrawer() {
 
             {/* Footer */}
             {items.length > 0 && (
-              <div className="border-t border-[rgba(200,169,126,0.06)] px-7 py-6">
+              <div className="border-t border-white/5 px-6 py-5">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-[rgba(255,255,255,0.35)] text-xs tracking-[0.15em] uppercase">Sous-total</span>
+                  <span className="text-[var(--text-tertiary)] text-[11px] tracking-[0.1em] uppercase">Sous-total</span>
                   <span className="text-white text-sm">{total.toFixed(2)} &euro;</span>
                 </div>
-                <div className="flex items-center justify-between mb-5">
-                  <span className="text-[rgba(255,255,255,0.35)] text-xs tracking-[0.15em] uppercase">Livraison</span>
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-[var(--text-tertiary)] text-[11px] tracking-[0.1em] uppercase">Livraison</span>
                   <span className="text-[var(--gold)] text-xs tracking-wider">OFFERTE</span>
                 </div>
-                <div className="h-[1px] bg-[rgba(200,169,126,0.08)] mb-4" />
-                <div className="flex items-center justify-between mb-6">
+                <div className="h-px bg-white/5 mb-4" />
+                <div className="flex items-center justify-between mb-5">
                   <span className="text-white text-sm font-medium tracking-wider uppercase">Total</span>
-                  <span className="font-display text-2xl text-[var(--gold)]">{total.toFixed(2)} &euro;</span>
+                  <span className="font-display text-xl text-[var(--gold)]">{total.toFixed(2)} &euro;</span>
                 </div>
                 <Link
                   href="/cart"
                   onClick={() => setIsOpen(false)}
-                  className="btn-gold w-full justify-center !py-4"
+                  className="btn-gold w-full justify-center !py-3.5 !text-[10px]"
                 >
-                  Commander <ArrowRight size={14} />
+                  Commander <ArrowRight size={12} />
                 </Link>
               </div>
             )}

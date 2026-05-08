@@ -107,12 +107,12 @@ export default function CartPage() {
       <>
         <Head><title>Panier — PrestigeFlow</title></Head>
         <section className="min-h-screen flex flex-col items-center justify-center px-6 pt-20 bg-[var(--noir)]">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <div className="w-24 h-24 mx-auto mb-8 border border-[rgba(200,169,126,0.1)] flex items-center justify-center">
-              <ShoppingBag size={40} className="text-[rgba(200,169,126,0.15)]" />
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+            <div className="w-24 h-24 mx-auto mb-8 border border-white/10 flex items-center justify-center">
+              <ShoppingBag size={40} className="text-[var(--text-muted)]" />
             </div>
             <h1 className="font-display text-3xl text-white mb-3 text-center">Votre panier est vide</h1>
-            <p className="text-[rgba(255,255,255,0.3)] mb-8 text-center text-sm">Découvrez nos créations et composez votre repas.</p>
+            <p className="text-[var(--text-secondary)] mb-8 text-center text-sm">Découvrez nos créations et composez votre repas.</p>
             <div className="flex justify-center">
               <Link href="/menu" className="btn-gold">Explorer la carte <ArrowRight size={14} /></Link>
             </div>
@@ -134,7 +134,7 @@ export default function CartPage() {
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
             <h1 className="font-display text-4xl text-white text-center mb-4">Commande Confirmée</h1>
-            <p className="text-[rgba(255,255,255,0.4)] text-center max-w-md mb-2">
+            <p className="text-[var(--text-secondary)] text-center max-w-md mb-2">
               Merci pour votre commande{delivery.name ? `, ${delivery.name}` : ''} !{' '}
               {delivery.type === 'delivery' ? 'Votre repas sera livré à l\'adresse indiquée.' : 'Votre commande sera prête pour un retrait au restaurant.'}
             </p>
@@ -170,15 +170,15 @@ export default function CartPage() {
                     className={`w-10 h-10 flex items-center justify-center text-xs font-medium transition-all duration-500 rounded-full ${
                       step > s.n ? 'bg-[var(--gold)] text-[var(--noir)]' :
                       step === s.n ? 'border-2 border-[var(--gold)] text-[var(--gold)] shadow-[0_0_20px_rgba(200,169,126,0.15)]' :
-                      'border border-[rgba(200,169,126,0.1)] text-[rgba(255,255,255,0.2)]'
+                      'border border-white/10 text-[var(--text-tertiary)]'
                     }`}
                   >
                     {step > s.n ? <Check size={14} /> : s.n}
                   </motion.div>
-                  <span className={`text-[10px] tracking-[0.15em] uppercase mt-2 ${step >= s.n ? 'text-[var(--gold)]' : 'text-[rgba(255,255,255,0.2)]'}`}>{s.label}</span>
+                  <span className={`text-[10px] tracking-[0.15em] uppercase mt-2 ${step >= s.n ? 'text-[var(--gold)]' : 'text-[var(--text-tertiary)]'}`}>{s.label}</span>
                 </div>
                 {i < 2 && (
-                  <div className={`w-12 md:w-24 h-[1px] mx-3 mb-5 transition-all duration-500 ${step > s.n ? 'bg-[var(--gold)]' : 'bg-[rgba(200,169,126,0.08)]'}`} />
+                  <div className={`w-12 md:w-24 h-[1px] mx-3 mb-5 transition-all duration-500 ${step > s.n ? 'bg-[var(--gold)]' : 'bg-white/5'}`} />
                 )}
               </div>
             ))}
@@ -208,19 +208,19 @@ export default function CartPage() {
                             <div className="flex items-start justify-between">
                               <div>
                                 <h3 className="font-display text-lg text-white">{item.name}</h3>
-                                <p className="text-[rgba(255,255,255,0.3)] text-xs mt-0.5">{item.price.toFixed(2)} &euro; / unité</p>
+                                <p className="text-[var(--text-tertiary)] text-xs mt-0.5">{item.price.toFixed(2)} &euro; / unité</p>
                               </div>
-                              <button onClick={() => removeItem(item.id)} className="text-[rgba(255,255,255,0.2)] hover:text-red-400 transition-colors ml-2">
+                              <button onClick={() => removeItem(item.id)} className="text-[var(--text-muted)] hover:text-red-400 transition-colors ml-2">
                                 <X size={16} />
                               </button>
                             </div>
                             <div className="flex items-center justify-between mt-3">
                               <div className="flex items-center gap-3">
-                                <button onClick={() => updateQty(item.id, item.qty - 1)} className="w-9 h-9 md:w-7 md:h-7 border border-[rgba(200,169,126,0.1)] flex items-center justify-center text-[rgba(255,255,255,0.4)] hover:border-[var(--gold)] hover:text-[var(--gold)] transition-all">
+                                <button onClick={() => updateQty(item.id, item.qty - 1)} className="w-9 h-9 md:w-7 md:h-7 border border-white/10 flex items-center justify-center text-[var(--text-tertiary)] hover:border-[var(--gold)] hover:text-[var(--gold)] transition-all">
                                   <Minus size={10} />
                                 </button>
                                 <span className="text-sm text-white w-5 text-center font-medium">{item.qty}</span>
-                                <button onClick={() => updateQty(item.id, item.qty + 1)} className="w-9 h-9 md:w-7 md:h-7 border border-[rgba(200,169,126,0.1)] flex items-center justify-center text-[rgba(255,255,255,0.4)] hover:border-[var(--gold)] hover:text-[var(--gold)] transition-all">
+                                <button onClick={() => updateQty(item.id, item.qty + 1)} className="w-9 h-9 md:w-7 md:h-7 border border-white/10 flex items-center justify-center text-[var(--text-tertiary)] hover:border-[var(--gold)] hover:text-[var(--gold)] transition-all">
                                   <Plus size={10} />
                                 </button>
                               </div>
@@ -233,7 +233,7 @@ export default function CartPage() {
 
                     {/* Order note */}
                     <div className="mt-4">
-                      <label className="text-[rgba(255,255,255,0.3)] text-[10px] tracking-[0.2em] uppercase mb-2 block">Note pour le Chef (optionnel)</label>
+                      <label className="text-[var(--text-secondary)] text-[10px] tracking-[0.2em] uppercase mb-2 block">Note pour le Chef (optionnel)</label>
                       <textarea
                         value={note}
                         onChange={e => setNote(e.target.value)}
@@ -252,18 +252,18 @@ export default function CartPage() {
                       <div className="flex flex-col gap-3 mb-5">
                         {items.map(item => (
                           <div key={item.id} className="flex justify-between text-[13px]">
-                            <span className="text-[rgba(255,255,255,0.35)] truncate pr-3">{item.name} x{item.qty}</span>
-                            <span className="text-[rgba(255,255,255,0.6)] whitespace-nowrap">{(item.price * item.qty).toFixed(2)} &euro;</span>
+                            <span className="text-[var(--text-tertiary)] truncate pr-3">{item.name} x{item.qty}</span>
+                            <span className="text-[var(--text-secondary)] whitespace-nowrap">{(item.price * item.qty).toFixed(2)} &euro;</span>
                           </div>
                         ))}
                       </div>
-                      <div className="h-[1px] bg-[rgba(200,169,126,0.06)] my-4" />
+                      <div className="h-[1px] bg-white/5 my-4" />
                       <div className="flex justify-between text-sm mb-2">
-                        <span className="text-[rgba(255,255,255,0.35)]">Sous-total</span>
+                        <span className="text-[var(--text-tertiary)]">Sous-total</span>
                         <span className="text-white">{total.toFixed(2)} &euro;</span>
                       </div>
                       <div className="flex justify-between text-sm mb-2">
-                        <span className="text-[rgba(255,255,255,0.35)]">Livraison</span>
+                        <span className="text-[var(--text-tertiary)]">Livraison</span>
                         <span className="text-[var(--gold)] text-xs tracking-wider">OFFERTE</span>
                       </div>
                       {discount > 0 && (
@@ -272,7 +272,7 @@ export default function CartPage() {
                           <span className="text-green-400">-{discount.toFixed(2)} &euro;</span>
                         </div>
                       )}
-                      <div className="h-[1px] bg-[rgba(200,169,126,0.06)] my-4" />
+                      <div className="h-[1px] bg-white/5 my-4" />
                       <div className="flex justify-between mb-6">
                         <span className="text-white font-medium tracking-wider uppercase text-sm">Total</span>
                         <span className="font-display text-2xl text-gradient-gold">{finalTotal.toFixed(2)} &euro;</span>
@@ -281,7 +281,7 @@ export default function CartPage() {
                       {/* Promo code */}
                       <div className="flex gap-2 mb-6">
                         <div className="flex-1 relative">
-                          <Gift size={12} className="absolute left-3 top-1/2 -translate-y-1/2 text-[rgba(255,255,255,0.2)]" />
+                          <Gift size={12} className="absolute left-3 top-1/2 -translate-y-1/2 text-[var(--text-muted)]" />
                           <input
                             type="text"
                             value={promo}
@@ -332,7 +332,7 @@ export default function CartPage() {
 
                     {/* Delivery time */}
                     <div className="mb-8">
-                      <label className="text-[rgba(255,255,255,0.4)] text-[10px] tracking-[0.2em] uppercase mb-3 flex items-center gap-2">
+                      <label className="text-[var(--text-secondary)] text-[10px] tracking-[0.2em] uppercase mb-3 flex items-center gap-2">
                         <Clock size={12} className="text-[var(--gold)]" /> Heure souhaitée
                       </label>
                       <div className="flex flex-wrap gap-2">
@@ -352,7 +352,7 @@ export default function CartPage() {
                     <div className="flex flex-col gap-5">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                         <div>
-                          <label className="text-[rgba(255,255,255,0.3)] text-[10px] tracking-[0.2em] uppercase mb-2 block">Nom complet</label>
+                          <label className="text-[var(--text-secondary)] text-[10px] tracking-[0.2em] uppercase mb-2 block">Nom complet</label>
                           <input type="text" required value={delivery.name} onChange={e => setDelivery(p => ({ ...p, name: e.target.value }))} className="input-luxury" placeholder="Votre nom" />
                         </div>
                         <div>
@@ -403,22 +403,22 @@ export default function CartPage() {
 
                     {/* Order summary */}
                     <div className="glass-card p-6 mb-6">
-                      <h3 className="text-[rgba(255,255,255,0.35)] text-[10px] tracking-[0.2em] uppercase mb-4">Récapitulatif</h3>
+                      <h3 className="text-[var(--text-tertiary)] text-[10px] tracking-[0.2em] uppercase mb-4">Récapitulatif</h3>
                       <div className="flex flex-col gap-2 mb-4">
                         {items.map(item => (
                           <div key={item.id} className="flex justify-between text-[12px]">
-                            <span className="text-[rgba(255,255,255,0.35)] truncate pr-3">{item.name} x{item.qty}</span>
-                            <span className="text-[rgba(255,255,255,0.6)] whitespace-nowrap">{(item.price * item.qty).toFixed(2)} &euro;</span>
+                            <span className="text-[var(--text-tertiary)] truncate pr-3">{item.name} x{item.qty}</span>
+                            <span className="text-[var(--text-secondary)] whitespace-nowrap">{(item.price * item.qty).toFixed(2)} &euro;</span>
                           </div>
                         ))}
                       </div>
-                      <div className="h-[1px] bg-[rgba(200,169,126,0.06)] my-3" />
+                      <div className="h-[1px] bg-white/5 my-3" />
                       <div className="flex justify-between mb-2">
-                        <span className="text-[rgba(255,255,255,0.35)] text-sm">Sous-total</span>
+                        <span className="text-[var(--text-tertiary)] text-sm">Sous-total</span>
                         <span className="text-white text-sm">{total.toFixed(2)} &euro;</span>
                       </div>
                       <div className="flex justify-between mb-2">
-                        <span className="text-[rgba(255,255,255,0.35)] text-sm">Livraison</span>
+                        <span className="text-[var(--text-tertiary)] text-sm">Livraison</span>
                         <span className="text-[var(--gold)] text-xs">OFFERTE</span>
                       </div>
                       {discount > 0 && (
@@ -427,13 +427,13 @@ export default function CartPage() {
                           <span className="text-green-400 text-sm">-{discount.toFixed(2)} &euro;</span>
                         </div>
                       )}
-                      <div className="h-[1px] bg-[rgba(200,169,126,0.06)] my-3" />
+                      <div className="h-[1px] bg-white/5 my-3" />
                       <div className="flex items-center justify-between">
                         <span className="text-white font-medium tracking-wider uppercase text-sm">Total</span>
                         <span className="font-display text-2xl text-gradient-gold">{finalTotal.toFixed(2)} &euro;</span>
                       </div>
                       {note && (
-                        <p className="text-[rgba(255,255,255,0.2)] text-xs mt-3 border-t border-[rgba(200,169,126,0.05)] pt-3">
+                        <p className="text-[var(--text-muted)] text-xs mt-3 border-t border-white/5 pt-3">
                           Note : {note}
                         </p>
                       )}
