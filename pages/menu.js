@@ -152,15 +152,15 @@ export default function MenuPage() {
       </section>
 
       {/* Category Filter */}
-      <section className="bg-[var(--noir)] border-b border-white/5">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-center justify-center gap-2 flex-wrap py-6">
+      <section className="bg-[var(--noir)] border-b border-white/5 overflow-x-hidden">
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+          <div className="flex items-center justify-center gap-2 flex-wrap py-6 overflow-x-auto scrollbar-hide">
             <Filter size={14} className="text-[var(--gold)] mr-1 flex-shrink-0" />
             {categories.map(cat => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-4 py-2 md:px-6 md:py-2.5 text-[11px] tracking-[0.2em] uppercase whitespace-nowrap transition-all duration-300 ${
+                className={`px-3 py-2 md:px-6 md:py-2.5 text-[10px] md:text-[11px] tracking-[0.2em] uppercase whitespace-nowrap transition-all duration-300 flex-shrink-0 ${
                   activeCategory === cat
                     ? 'bg-[var(--gold)] text-[var(--noir)] font-semibold shadow-[0_4px_20px_rgba(200,169,126,0.2)] rounded-full'
                     : 'text-[var(--text-secondary)] hover:text-white border border-white/10 hover:border-white/20 rounded-full'
@@ -221,10 +221,11 @@ export default function MenuPage() {
                 rel="noopener noreferrer"
                 className="group flex items-center justify-center gap-3 px-6 py-3 bg-white/[0.02] border border-white/10 rounded-lg hover:bg-white/[0.06] hover:border-[var(--gold)] transition-all"
               >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="text-[var(--text-tertiary)] group-hover:text-[var(--gold)] transition-colors">
-                  <path d="M11.999 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.522 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"/>
-                  <path d="M12 6c-3.314 0-6 2.686-6 6s2.686 6 6 6 6-2.686 6-6-2.686-6-6-6zm0 10c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4z"/>
-                </svg>
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Uber_Eats_2020.svg/1200px-Uber_Eats_2020.svg.png"
+                  alt="Uber Eats"
+                  className="w-6 h-6 object-contain brightness-0 invert opacity-70 group-hover:opacity-100 group-hover:brightness-100 transition-all"
+                />
                 <span className="text-white text-sm">Commander sur Uber Eats</span>
               </a>
               <a
@@ -233,10 +234,11 @@ export default function MenuPage() {
                 rel="noopener noreferrer"
                 className="group flex items-center justify-center gap-3 px-6 py-3 bg-white/[0.02] border border-white/10 rounded-lg hover:bg-white/[0.06] hover:border-[var(--gold)] transition-all"
               >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="text-[var(--text-tertiary)] group-hover:text-[var(--gold)] transition-colors">
-                  <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.522 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"/>
-                  <path d="M12 7c-2.761 0-5 2.239-5 5s2.239 5 5 5 5-2.239 5-5-2.239-5-5-5zm0 8c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/>
-                </svg>
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Deliveroo_logo.svg/1200px-Deliveroo_logo.svg.png"
+                  alt="Deliveroo"
+                  className="w-6 h-6 object-contain brightness-0 invert opacity-70 group-hover:opacity-100 group-hover:brightness-100 transition-all"
+                />
                 <span className="text-white text-sm">Commander sur Deliveroo</span>
               </a>
             </div>

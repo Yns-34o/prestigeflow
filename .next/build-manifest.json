@@ -5,8 +5,8 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/o5I27mfiEPps5vtRqIEFF/_buildManifest.js",
-    "static/o5I27mfiEPps5vtRqIEFF/_ssgManifest.js"
+    "static/IBd2ugPWvoug_0yw1blUm/_buildManifest.js",
+    "static/IBd2ugPWvoug_0yw1blUm/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "pages": {
@@ -14,14 +14,14 @@
       "static/chunks/webpack-ee7e63bc15b31913.js",
       "static/chunks/framework-ecc4130bc7a58a64.js",
       "static/chunks/main-f61746aa183f4a64.js",
-      "static/chunks/pages/index-84482d556954fecb.js"
+      "static/chunks/pages/index-963e9b50e52d9064.js"
     ],
     "/_app": [
       "static/chunks/webpack-ee7e63bc15b31913.js",
       "static/chunks/framework-ecc4130bc7a58a64.js",
       "static/chunks/main-f61746aa183f4a64.js",
-      "static/css/264bcd598df94d00.css",
-      "static/chunks/pages/_app-50e2371e5110862a.js"
+      "static/css/feeb14fcb5515694.css",
+      "static/chunks/pages/_app-030a3e54f234c483.js"
     ],
     "/_error": [
       "static/chunks/webpack-ee7e63bc15b31913.js",
@@ -63,7 +63,7 @@
       "static/chunks/webpack-ee7e63bc15b31913.js",
       "static/chunks/framework-ecc4130bc7a58a64.js",
       "static/chunks/main-f61746aa183f4a64.js",
-      "static/chunks/pages/cart-5fec1a7e37d21598.js"
+      "static/chunks/pages/cart-2e042f8e48f8fa2a.js"
     ],
     "/contact": [
       "static/chunks/webpack-ee7e63bc15b31913.js",
@@ -75,19 +75,19 @@
       "static/chunks/webpack-ee7e63bc15b31913.js",
       "static/chunks/framework-ecc4130bc7a58a64.js",
       "static/chunks/main-f61746aa183f4a64.js",
-      "static/chunks/pages/gallery-3082ce70f8b6a5b5.js"
+      "static/chunks/pages/gallery-20a8a07ae48b641a.js"
     ],
     "/menu": [
       "static/chunks/webpack-ee7e63bc15b31913.js",
       "static/chunks/framework-ecc4130bc7a58a64.js",
       "static/chunks/main-f61746aa183f4a64.js",
-      "static/chunks/pages/menu-07df9d5f663e5180.js"
+      "static/chunks/pages/menu-391103c8d90e685d.js"
     ],
     "/reservation": [
       "static/chunks/webpack-ee7e63bc15b31913.js",
       "static/chunks/framework-ecc4130bc7a58a64.js",
       "static/chunks/main-f61746aa183f4a64.js",
-      "static/chunks/pages/reservation-d65e0d4daf81f8e2.js"
+      "static/chunks/pages/reservation-318e3f256f60279d.js"
     ]
   },
   "ampFirstPages": []

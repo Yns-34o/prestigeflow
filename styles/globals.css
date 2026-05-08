@@ -56,6 +56,8 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 body {
@@ -63,6 +65,7 @@ body {
   color: var(--text-primary);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   overflow-x: hidden;
+  max-width: 100vw;
   line-height: 1.6;
   letter-spacing: 0.01em;
 }
@@ -436,6 +439,24 @@ body {
   letter-spacing: 0.02em;
 }
 
+/* ── SELECT DROPDOWN STYLING ── */
+.select-luxury {
+  background-image: none;
+  background-color: rgba(255,255,255,0.02);
+}
+
+.select-luxury option {
+  background: var(--noir-card);
+  color: var(--text-primary);
+  padding: var(--space-1) var(--space-2);
+}
+
+.select-luxury option:hover,
+.select-luxury option:checked {
+  background: rgba(212, 175, 122, 0.1);
+  color: var(--gold);
+}
+
 /* ── SECTION SPACING ── */
 .section-padding {
   padding: var(--space-7) 0;
@@ -512,6 +533,65 @@ body {
     padding: var(--space-1) var(--space-3);
     font-size: 10px;
     min-height: 44px;
+  }
+}
+
+/* ── HORIZONTAL OVERFLOW PREVENTION ── */
+* {
+  max-width: 100vw;
+  box-sizing: border-box;
+}
+
+img, video, canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent text overflow */
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Mobile-specific overflow fixes */
+@media (max-width: 640px) {
+  * {
+    max-width: 100vw;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Fix for elements that might overflow on mobile */
+  .max-w-7xl, .max-w-6xl, .max-w-5xl, .max-w-4xl, .max-w-3xl, .max-w-2xl, .max-w-xl {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Ensure flex containers don't overflow */
+  .flex {
+    overflow-wrap: break-word;
+  }
+
+  /* Fix for long text on mobile */
+  p, span, div, a {
+    word-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Extra small mobile fixes */
+  html, body {
+    overflow-x: hidden !important;
+  }
+
+  /* Prevent fixed positioning from causing overflow */
+  .fixed {
+    max-width: 100vw;
   }
 }
 

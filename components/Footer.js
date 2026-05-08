@@ -17,10 +17,10 @@ const deliveryLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[var(--noir)] border-t border-white/5">
+    <footer className="bg-[var(--noir)] border-t border-white/5 overflow-x-hidden">
       {/* Main content */}
-      <div className="max-w-7xl mx-auto px-6 py-16 md:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 md:gap-16">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-20 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-12 lg:gap-16">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-6">
@@ -106,7 +106,19 @@ export default function Footer() {
                   className="group flex items-center gap-3 p-3 bg-white/[0.02] rounded-lg hover:bg-white/[0.06] transition-all duration-300"
                 >
                   <div className="w-8 h-8 flex items-center justify-center bg-white/10 rounded-lg group-hover:bg-[var(--gold)] group-hover:text-[var(--noir)] transition-all">
-                    <ExternalLink size={12} />
+                    {link.name === 'Uber Eats' ? (
+                      <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Uber_Eats_2020.svg/1200px-Uber_Eats_2020.svg.png"
+                        alt="Uber Eats"
+                        className="w-6 h-6 object-contain"
+                      />
+                    ) : (
+                      <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Deliveroo_logo.svg/1200px-Deliveroo_logo.svg.png"
+                        alt="Deliveroo"
+                        className="w-6 h-6 object-contain"
+                      />
+                    )}
                   </div>
                   <span className="text-[var(--text-secondary)] text-sm group-hover:text-white transition-colors">{link.name}</span>
                 </a>
@@ -118,7 +130,7 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4 w-full">
           <p className="text-[var(--text-muted)] text-[11px] tracking-wider">
             &copy; {new Date().getFullYear()} PrestigeFlow. Tous droits réservés.
           </p>

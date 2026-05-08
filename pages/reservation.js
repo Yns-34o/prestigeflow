@@ -1,8 +1,8 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import { motion, useInView } from 'framer-motion'
-import { Calendar, Clock, Users, Check, ArrowRight } from 'lucide-react'
+import { Calendar, Clock, Users, Check, ArrowRight, Sparkles, Mail, ChefHat, Phone } from 'lucide-react'
 
 const timeSlots = [
   '12:00', '12:30', '13:00', '13:30',
@@ -75,21 +75,174 @@ export default function ReservationPage() {
         </div>
       </section>
 
+      {/* Phone Reservation Option */}
+      <section className="py-16 bg-[var(--noir-light)] border-b border-white/5">
+        <div className="max-w-4xl mx-auto px-6">
+          <Reveal>
+            <div className="glass-card p-8 md:p-12 relative overflow-hidden">
+              {/* Decorative elements */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--gold)] opacity-5 rounded-full blur-3xl" />
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-[var(--gold)] opacity-3 rounded-full blur-2xl" />
+
+              <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+                <div className="flex-1 text-center md:text-left">
+                  <div className="flex items-center justify-center md:justify-start gap-3 mb-4">
+                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[var(--gold-light)] to-[var(--gold-dark)] flex items-center justify-center">
+                      <Phone size={24} className="text-[var(--noir)]" />
+                    </div>
+                    <span className="text-[var(--gold)] text-xs tracking-[0.3em] uppercase">Réservation Téléphonique</span>
+                  </div>
+                  <h2 className="font-display text-2xl md:text-3xl text-white mb-3">
+                    Préférez-vous parler à notre équipe ?
+                  </h2>
+                  <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
+                    Notre conciergerie est à votre disposition pour vous assister dans votre réservation et répondre à toutes vos questions.
+                  </p>
+                </div>
+
+                <div className="flex flex-col items-center gap-4">
+                  <a
+                    href="tel:+33142689900"
+                    className="group flex items-center gap-3 px-8 py-4 bg-gradient-to-br from-[var(--gold-light)] to-[var(--gold-dark)] rounded-full text-[var(--noir)] font-semibold transition-all duration-300 hover:shadow-[0_0_30px_rgba(212,175,122,0.4)] hover:-translate-y-1"
+                  >
+                    <Phone size={20} className="group-hover:animate-pulse" />
+                    <span className="text-lg tracking-wide">+33 1 42 68 99 00</span>
+                  </a>
+                  <p className="text-[var(--text-muted)] text-xs">
+                    Disponible tous les jours de 10h à 22h
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {submitted ? (
         <section className="section-padding bg-[var(--noir)]">
-          <div className="max-w-lg mx-auto px-6 text-center">
-            <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: 'spring', duration: 0.6 }}>
-              <div className="w-20 h-20 mx-auto mb-6 border-2 border-[var(--gold)] flex items-center justify-center">
-                <Check size={32} className="text-[var(--gold)]" />
+          <div className="max-w-2xl mx-auto px-6 text-center">
+            {/* Animated Checkmark */}
+            <motion.div
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ type: 'spring', duration: 0.8, delay: 0.2 }}
+              className="relative mb-8"
+            >
+              <div className="w-24 h-24 mx-auto mb-6 border-2 border-[var(--gold)] rounded-full flex items-center justify-center bg-gradient-to-br from-[var(--gold)]/5 to-transparent relative">
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ type: 'spring', duration: 0.5, delay: 0.6 }}
+                  className="absolute inset-0 border-2 border-[var(--gold)] rounded-full animate-pulse"
+                />
+                <motion.div
+                  initial={{ scale: 0, rotate: -180 }}
+                  animate={{ scale: 1, rotate: 0 }}
+                  transition={{ type: 'spring', duration: 0.6, delay: 0.8 }}
+                >
+                  <Check size={40} className="text-[var(--gold)]" />
+                </motion.div>
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: [0, 1.2, 1] }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  className="absolute -top-2 -right-2"
+                >
+                  <Sparkles size={20} className="text-[var(--gold)]" />
+                </motion.div>
               </div>
             </motion.div>
-            <h2 className="font-display text-3xl text-white mb-4">Réservation Confirmée</h2>
-            <p className="text-[var(--text-secondary)] leading-relaxed mb-8">
-              Merci, {form.name}. Votre table pour {form.guests} personne{parseInt(form.guests) > 1 ? 's' : ''} le{' '}
-              {form.date} à {form.time} a été réservée avec succès.
-              Vous recevrez un email de confirmation à {form.email}.
-            </p>
-            <Link href="/" className="btn-outline">Retour à l&apos;accueil</Link>
+
+            {/* Main Title */}
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="font-display text-4xl md:text-5xl text-white mb-6"
+            >
+              Réservation <span className="text-gradient-gold">Confirmée</span>
+            </motion.h2>
+
+            {/* Personalized Thank You */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="mb-8"
+            >
+              <p className="text-[var(--text-secondary)] text-lg leading-relaxed mb-4">
+                Merci infiniment, <span className="text-white font-semibold">{form.name}</span>.
+              </p>
+              <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
+                Votre table pour <span className="text-[var(--gold)]">{form.guests}</span> personne{parseInt(form.guests) > 1 ? 's' : ''} le{' '}
+                <span className="text-white">{form.date}</span> à <span className="text-[var(--gold)]">{form.time}</span> a été préparée avec le plus grand soin par notre équipe.
+              </p>
+            </motion.div>
+
+            {/* Premium Quote */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="mb-8 p-6 border border-[var(--gold)]/30 rounded-lg bg-gradient-to-br from-[var(--gold)]/5 to-transparent relative overflow-hidden"
+            >
+              <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[var(--gold)] to-transparent" />
+              <p className="text-[var(--text-secondary)] italic text-sm leading-relaxed">
+                "L'excellence n'est pas un acte, mais une habitude. Nous vous réservons une expérience inoubliable, où chaque plat raconte une histoire et chaque moment devient un souvenir précieux."
+              </p>
+              <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[var(--gold)] to-transparent" />
+            </motion.div>
+
+            {/* What to Expect */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.7 }}
+              className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10"
+            >
+              <div className="p-4 border border-white/10 rounded-lg bg-white/5">
+                <Mail size={24} className="text-[var(--gold)] mx-auto mb-2" />
+                <p className="text-white text-sm font-medium mb-1">Email de Confirmation</p>
+                <p className="text-[var(--text-tertiary)] text-xs">Envoyé à {form.email}</p>
+              </div>
+              <div className="p-4 border border-white/10 rounded-lg bg-white/5">
+                <ChefHat size={24} className="text-[var(--gold)] mx-auto mb-2" />
+                <p className="text-white text-sm font-medium mb-1">Préparation Chef</p>
+                <p className="text-[var(--text-tertiary)] text-xs">Menu personnalisé en préparation</p>
+              </div>
+              <div className="p-4 border border-white/10 rounded-lg bg-white/5">
+                <Calendar size={24} className="text-[var(--gold)] mx-auto mb-2" />
+                <p className="text-white text-sm font-medium mb-1">Rappel 24h</p>
+                <p className="text-[var(--text-tertiary)] text-xs">Notification avant votre venue</p>
+              </div>
+            </motion.div>
+
+            {/* Premium Closing Statement */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="mb-10"
+            >
+              <p className="text-[var(--gold)] text-sm tracking-[0.2em] uppercase mb-2">
+                À très bientôt
+              </p>
+              <p className="text-white text-xl font-display italic">
+                Nous avons hâte de vous accueillir pour une expérience gastronomique d'exception.
+              </p>
+            </motion.div>
+
+            {/* Back Button */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.9 }}
+            >
+              <Link href="/" className="btn-outline inline-flex items-center gap-2 group">
+                Retour à l'accueil
+                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </motion.div>
           </div>
         </section>
       ) : (
@@ -174,14 +327,25 @@ export default function ReservationPage() {
                   </div>
                   <div>
                     <label className="text-[rgba(255,255,255,0.5)] text-xs tracking-[0.2em] uppercase mb-2 block">Occasion (optionnel)</label>
-                    <select value={form.occasion} onChange={e => update('occasion', e.target.value)} className="input-luxury">
-                      <option value="">Aucune</option>
-                      <option value="anniversaire">Anniversaire</option>
-                      <option value="romantique">Dîner romantique</option>
-                      <option value="affaires">Repas d'affaires</option>
-                      <option value="celebration">Célébration</option>
-                      <option value="autre">Autre</option>
-                    </select>
+                    <div className="relative">
+                      <select
+                        value={form.occasion}
+                        onChange={e => update('occasion', e.target.value)}
+                        className="input-luxury select-luxury appearance-none cursor-pointer pr-10"
+                      >
+                        <option value="">Aucune</option>
+                        <option value="anniversaire">Anniversaire</option>
+                        <option value="romantique">Dîner romantique</option>
+                        <option value="affaires">Repas d'affaires</option>
+                        <option value="celebration">Célébration</option>
+                        <option value="autre">Autre</option>
+                      </select>
+                      <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M2 4L6 8L10 4" stroke="var(--gold)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </Reveal>

@@ -130,13 +130,13 @@ export default function Navbar() {
             </Link>
 
             {/* Center: Navigation Links */}
-            <nav className="flex-1 flex items-center justify-center">
-              <div className="flex items-center gap-1">
+            <nav className="flex-1 flex items-center justify-center overflow-hidden">
+              <div className="flex items-center gap-1 overflow-x-auto scrollbar-hide">
                 {tabletLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`px-4 py-2 text-[10px] tracking-[0.12em] uppercase font-medium transition-colors duration-300 rounded-lg ${
+                    className={`px-3 py-2 text-[10px] tracking-[0.12em] uppercase font-medium transition-colors duration-300 rounded-lg whitespace-nowrap flex-shrink-0 ${
                       pathname === link.href
                         ? 'text-[var(--gold)] bg-[var(--gold)]/8'
                         : 'text-[var(--text-secondary)] hover:text-white'
@@ -206,13 +206,13 @@ export default function Navbar() {
             </Link>
 
             {/* Center: Navigation Links */}
-            <nav className="flex-1 flex items-center justify-center">
-              <div className="flex items-center gap-1">
+            <nav className="flex-1 flex items-center justify-center overflow-hidden">
+              <div className="flex items-center gap-1 overflow-x-auto scrollbar-hide">
                 {links.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`relative px-5 py-2 text-[11px] tracking-[0.15em] uppercase font-medium transition-colors duration-300 rounded-lg ${
+                    className={`relative px-4 py-2 text-[11px] tracking-[0.15em] uppercase font-medium transition-colors duration-300 rounded-lg whitespace-nowrap flex-shrink-0 ${
                       pathname === link.href
                         ? 'text-[var(--gold)]'
                         : 'text-[var(--text-secondary)] hover:text-white'

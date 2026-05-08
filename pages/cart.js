@@ -302,7 +302,7 @@ export default function CartPage() {
 
                       {/* Delivery Platforms */}
                       <div className="mt-6 pt-6 border-t border-white/5">
-                        <p className="text-[var(--text-tertiary] text-[10px] tracking-[0.15em] uppercase mb-3 text-center">Ou commandez via</p>
+                        <p className="text-[var(--text-tertiary)] text-[10px] tracking-[0.15em] uppercase mb-3 text-center">Ou commandez via</p>
                         <div className="flex gap-3">
                           <a
                             href="https://www.ubereats.com/fr/paris/food-delivery/prestigeflow"
@@ -310,10 +310,11 @@ export default function CartPage() {
                             rel="noopener noreferrer"
                             className="flex-1 flex items-center justify-center gap-2 py-2.5 bg-white/[0.02] border border-white/10 rounded-lg hover:bg-white/[0.06] hover:border-[var(--gold)] transition-all"
                           >
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" className="text-[var(--text-tertiary)]">
-                              <path d="M11.999 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.522 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"/>
-                              <path d="M12 6c-3.314 0-6 2.686-6 6s2.686 6 6 6 6-2.686 6-6-2.686-6-6-6zm0 10c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4z"/>
-                            </svg>
+                            <img
+                              src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Uber_Eats_2020.svg/1200px-Uber_Eats_2020.svg.png"
+                              alt="Uber Eats"
+                              className="w-5 h-5 object-contain brightness-0 invert opacity-70 hover:opacity-100 hover:brightness-100 transition-all"
+                            />
                             <span className="text-white text-[10px]">Uber Eats</span>
                           </a>
                           <a
@@ -322,10 +323,11 @@ export default function CartPage() {
                             rel="noopener noreferrer"
                             className="flex-1 flex items-center justify-center gap-2 py-2.5 bg-white/[0.02] border border-white/10 rounded-lg hover:bg-white/[0.06] hover:border-[var(--gold)] transition-all"
                           >
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" className="text-[var(--text-tertiary)]">
-                              <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.522 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"/>
-                              <path d="M12 7c-2.761 0-5 2.239-5 5s2.239 5 5 5 5-2.239 5-5-2.239-5-5-5zm0 8c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/>
-                            </svg>
+                            <img
+                              src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Deliveroo_logo.svg/1200px-Deliveroo_logo.svg.png"
+                              alt="Deliveroo"
+                              className="w-5 h-5 object-contain brightness-0 invert opacity-70 hover:opacity-100 hover:brightness-100 transition-all"
+                            />
                             <span className="text-white text-[10px]">Deliveroo</span>
                           </a>
                         </div>

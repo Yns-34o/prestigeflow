@@ -12,7 +12,7 @@ export default function Layout({ children }) {
   }, [])
 
   return (
-    <>
+    <div className="min-h-screen w-full overflow-x-hidden bg-[var(--noir)]">
       {loading && (
         <div className="preloader">
           <div className="preloader-logo">PrestigeFlow</div>
@@ -27,6 +27,6 @@ export default function Layout({ children }) {
         <main className="page-enter">{children}</main>
         <Footer />
       </div>
-    </>
+    </div>
   )
 }
