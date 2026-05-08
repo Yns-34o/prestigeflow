@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { MapPin, Phone, Mail, Clock } from 'lucide-react'
+import { MapPin, Phone, Mail, Clock, ExternalLink } from 'lucide-react'
 
 const navLinks = [
   { href: '/', label: 'Accueil' },
@@ -10,12 +10,17 @@ const navLinks = [
   { href: '/contact', label: 'Contact' },
 ]
 
+const deliveryLinks = [
+  { name: 'Uber Eats', url: 'https://www.ubereats.com/fr/paris/food-delivery/prestigeflow', color: 'bg-[#00CCBC]' },
+  { name: 'Deliveroo', url: 'https://www.deliveroo.fr/fr/menu/paris/prestigeflow', color: 'bg-[#00CCBC]' },
+]
+
 export default function Footer() {
   return (
     <footer className="bg-[var(--noir)] border-t border-white/5">
       {/* Main content */}
       <div className="max-w-7xl mx-auto px-6 py-16 md:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 md:gap-16">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-6">
@@ -85,6 +90,27 @@ export default function Footer() {
                   <p className="text-[var(--text-secondary)]">12:00 — 15:00 / 19:00 — 00:00</p>
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* Delivery */}
+          <div>
+            <h4 className="font-display text-sm tracking-[0.2em] uppercase text-[var(--gold)] mb-6">Livraison</h4>
+            <div className="flex flex-col gap-3">
+              {deliveryLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-3 p-3 bg-white/[0.02] rounded-lg hover:bg-white/[0.06] transition-all duration-300"
+                >
+                  <div className="w-8 h-8 flex items-center justify-center bg-white/10 rounded-lg group-hover:bg-[var(--gold)] group-hover:text-[var(--noir)] transition-all">
+                    <ExternalLink size={12} />
+                  </div>
+                  <span className="text-[var(--text-secondary)] text-sm group-hover:text-white transition-colors">{link.name}</span>
+                </a>
+              ))}
             </div>
           </div>
         </div>

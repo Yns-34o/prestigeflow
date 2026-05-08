@@ -537,6 +537,57 @@ export default function Home() {
         </div>
       </ParallaxSection>
 
+      {/* ══════════ DELIVERY PLATFORMS ══════════ */}
+      <section className="section-padding bg-[var(--noir-light)]">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <Reveal>
+            <span className="text-[var(--gold)] text-[10px] tracking-[0.4em] uppercase">Livraison à domicile</span>
+            <h2 className="font-display text-2xl md:text-3xl lg:text-[4rem] text-white mt-4 mb-4">
+              Commandez sur nos <span className="italic text-gradient-gold">partenaires</span>
+            </h2>
+            <p className="text-[var(--text-secondary)] leading-relaxed mb-10 text-[15px]">
+              Profitez de nos créations culinaires chez vous grâce à nos partenaires de livraison.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="https://www.ubereats.com/fr/paris/food-delivery/prestigeflow"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-center gap-3 px-8 py-4 bg-white/[0.02] border border-white/10 rounded-xl hover:bg-white/[0.06] hover:border-[var(--gold)] transition-all"
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className="text-[var(--text-secondary)] group-hover:text-[var(--gold)] transition-colors">
+                  <path d="M11.999 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.522 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"/>
+                  <path d="M12 6c-3.314 0-6 2.686-6 6s2.686 6 6 6 6-2.686 6-6-2.686-6-6-6zm0 10c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4z"/>
+                </svg>
+                <span className="text-white text-sm font-medium">Uber Eats</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--text-tertiary)] group-hover:text-[var(--gold)] transition-colors">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                  <polyline points="15 3 21 3 21 9"/>
+                  <line x1="10" y1="14" x2="21" y2="3"/>
+                </svg>
+              </a>
+              <a
+                href="https://www.deliveroo.fr/fr/menu/paris/prestigeflow"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-center gap-3 px-8 py-4 bg-white/[0.02] border border-white/10 rounded-xl hover:bg-white/[0.06] hover:border-[var(--gold)] transition-all"
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className="text-[var(--text-secondary)] group-hover:text-[var(--gold)] transition-colors">
+                  <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.522 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"/>
+                  <path d="M12 7c-2.761 0-5 2.239-5 5s2.239 5 5 5 5-2.239 5-5-2.239-5-5-5zm0 8c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/>
+                </svg>
+                <span className="text-white text-sm font-medium">Deliveroo</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--text-tertiary)] group-hover:text-[var(--gold)] transition-colors">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                  <polyline points="15 3 21 3 21 9"/>
+                  <line x1="10" y1="14" x2="21" y2="3"/>
+                </svg>
+              </a>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* ══════════ NEWSLETTER ══════════ */}
       <section className="py-20 bg-[var(--noir)] border-t border-white/5">
         <div className="max-w-xl mx-auto px-6 text-center">

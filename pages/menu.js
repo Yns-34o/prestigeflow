@@ -204,6 +204,43 @@ export default function MenuPage() {
               <Sparkles size={12} className="text-[var(--gold)]" />
             </p>
           </motion.div>
+
+          {/* Delivery Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mt-16 pt-10 border-t border-white/5"
+          >
+            <h3 className="font-display text-xl text-white mb-6 text-center">Livraison à domicile</h3>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="https://www.ubereats.com/fr/paris/food-delivery/prestigeflow"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-center gap-3 px-6 py-3 bg-white/[0.02] border border-white/10 rounded-lg hover:bg-white/[0.06] hover:border-[var(--gold)] transition-all"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="text-[var(--text-tertiary)] group-hover:text-[var(--gold)] transition-colors">
+                  <path d="M11.999 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.522 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"/>
+                  <path d="M12 6c-3.314 0-6 2.686-6 6s2.686 6 6 6 6-2.686 6-6-2.686-6-6-6zm0 10c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4z"/>
+                </svg>
+                <span className="text-white text-sm">Commander sur Uber Eats</span>
+              </a>
+              <a
+                href="https://www.deliveroo.fr/fr/menu/paris/prestigeflow"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-center gap-3 px-6 py-3 bg-white/[0.02] border border-white/10 rounded-lg hover:bg-white/[0.06] hover:border-[var(--gold)] transition-all"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="text-[var(--text-tertiary)] group-hover:text-[var(--gold)] transition-colors">
+                  <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.522 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"/>
+                  <path d="M12 7c-2.761 0-5 2.239-5 5s2.239 5 5 5 5-2.239 5-5-2.239-5-5-5zm0 8c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/>
+                </svg>
+                <span className="text-white text-sm">Commander sur Deliveroo</span>
+              </a>
+            </div>
+          </motion.div>
         </div>
       </section>
     </>
