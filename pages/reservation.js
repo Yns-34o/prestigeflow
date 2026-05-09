@@ -315,6 +315,7 @@ export default function ReservationPage() {
               </div>
             </motion.div>
 
+
             {/* Main Title */}
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -324,6 +325,7 @@ export default function ReservationPage() {
             >
               Réservation <span className="text-gradient-gold">Confirmée</span>
             </motion.h2>
+
 
             {/* Personalized Thank You */}
             <motion.div
@@ -339,9 +341,11 @@ export default function ReservationPage() {
                 Votre table pour <span className="text-[var(--gold)]">{form.guests}</span> personne{parseInt(form.guests) > 1 ? 's' : ''} le{' '}
                 <span className="text-white">{form.date}</span> à <span className="text-[var(--gold)]">{form.time}</span> a été préparée avec le plus grand soin par notre équipe.
               </p>
-              <p className="text-[var(--text-secondary)] leading-relaxed">
+              <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
                 Un email de confirmation vous a été envoyé à <span className="text-white">{form.email}</span>.
               </p>
+            </motion.div>
+
 
             {/* Premium Quote */}
             <motion.div
