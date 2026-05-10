@@ -51,12 +51,11 @@ export default function Navbar() {
         animate={hidden ? 'hidden' : 'visible'}
         transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
         initial={{ y: '-100%' }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-400 max-w-full overflow-x-hidden ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-400 ${
           scrolled
             ? 'bg-[rgba(10,10,10,0.95)] backdrop-blur-xl shadow-lg'
             : 'bg-transparent'
         }`}
-        style={{ maxWidth: '100vw', overflowX: 'hidden' }}
       >
         {/* Scroll Progress Bar */}
         <motion.div
@@ -131,8 +130,8 @@ export default function Navbar() {
             </Link>
 
             {/* Center: Navigation Links */}
-            <nav className="flex-1 flex items-center justify-center overflow-hidden" style={{ maxWidth: '100%', overflowX: 'hidden' }}>
-              <div className="flex items-center gap-1 overflow-x-auto scrollbar-hide" style={{ maxWidth: '100%', overflowX: 'hidden' }}>
+            <nav className="flex-1 flex items-center justify-center overflow-hidden">
+              <div className="flex items-center gap-1 overflow-x-auto scrollbar-hide">
                 {tabletLinks.map((link) => (
                   <Link
                     key={link.href}
@@ -207,8 +206,8 @@ export default function Navbar() {
             </Link>
 
             {/* Center: Navigation Links */}
-            <nav className="flex-1 flex items-center justify-center overflow-hidden" style={{ maxWidth: '100%', overflowX: 'hidden' }}>
-              <div className="flex items-center gap-1 overflow-x-auto scrollbar-hide" style={{ maxWidth: '100%', overflowX: 'hidden' }}>
+            <nav className="flex-1 flex items-center justify-center overflow-hidden">
+              <div className="flex items-center gap-1 overflow-x-auto scrollbar-hide">
                 {links.map((link) => (
                   <Link
                     key={link.href}
@@ -275,8 +274,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-[60] bg-[rgba(10,10,10,0.98)] backdrop-blur-3xl max-w-full overflow-x-hidden"
-            style={{ maxWidth: '100vw', overflowX: 'hidden' }}
+            className="fixed inset-0 z-[60] bg-[rgba(10,10,10,0.98)] backdrop-blur-3xl"
           >
             {/* Close Button */}
             <motion.button
