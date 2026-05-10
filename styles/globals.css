@@ -50,6 +50,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 html {
@@ -58,6 +60,9 @@ html {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   max-width: 100vw;
+  width: 100vw;
+  position: relative;
+  touch-action: pan-y pinch-zoom;
 }
 
 body {
@@ -65,9 +70,15 @@ body {
   color: var(--text-primary);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   overflow-x: hidden;
+  overflow-y: auto;
   max-width: 100vw;
+  width: 100vw;
+  min-width: 100vw;
   line-height: 1.6;
   letter-spacing: 0.01em;
+  position: relative;
+  touch-action: pan-y pinch-zoom;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* ── SELECTION ── */
@@ -542,9 +553,23 @@ body {
   box-sizing: border-box;
 }
 
+html, body {
+  overflow-x: hidden;
+  width: 100vw;
+  max-width: 100vw;
+}
+
+/* Ensure viewport meta tag is respected */
+@viewport {
+  width: device-width;
+  max-zoom: 1;
+  user-zoom: fixed;
+}
+
 img, video, canvas {
   max-width: 100%;
   height: auto;
+  display: block;
 }
 
 /* Prevent text overflow */
@@ -554,32 +579,124 @@ img, video, canvas {
   white-space: nowrap;
 }
 
+/* Force all elements to stay within viewport */
+* {
+  max-width: 100vw;
+  position: relative;
+}
+
+/* Prevent overflow on all elements */
+* {
+  overflow-x: hidden !important;
+}
+
 /* Mobile-specific overflow fixes */
 @media (max-width: 640px) {
-  * {
-    max-width: 100vw;
+  html, body {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    min-width: 100vw !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    touch-action: pan-y pinch-zoom !important;
+    -webkit-overflow-scrolling: touch !important;
   }
 
-  body {
-    overflow-x: hidden;
+  /* Force viewport to stay within screen */
+  #__next, #__next a, #__next div, #__next section {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    position: relative !important;
   }
 
   /* Fix for elements that might overflow on mobile */
-  .max-w-7xl, .max-w-6xl, .max-w-5xl, .max-w-4xl, .max-w-3xl, .max-w-2xl, .max-w-xl {
+  .max-w-7xl, .max-w-6xl, .max-w-5xl, .max-w-4xl, .max-w-3xl, .max-w-2xl, .max-w-xl,
+  .max-w-lg, .max-w-md, .max-w-sm, .max-w-xs {
     padding-left: 1rem;
     padding-right: 1rem;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Ensure all containers respect viewport */
+  section, div, main, header, footer, nav, aside, article {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    width: 100% !important;
   }
 
   /* Ensure flex containers don't overflow */
-  .flex {
-    overflow-wrap: break-word;
+  .flex, .flex-row, .flex-col, .grid, .flex-wrap, .flex-1 {
+    overflow-wrap: break-word !important;
+    overflow-x: hidden !important;
+    max-width: 100% !important;
   }
 
   /* Fix for long text on mobile */
-  p, span, div, a {
-    word-wrap: break-word;
-    word-break: break-word;
+  p, span, div, a, h1, h2, h3, h4, h5, h6, button, label, input, textarea, select {
+    word-wrap: break-word !important;
+    word-break: break-word !important;
     hyphens: auto;
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* Prevent images from causing overflow */
+  img, picture, svg, video, canvas {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block;
+    overflow-x: hidden !important;
+  }
+
+  /* Prevent table overflow */
+  table, tbody, thead, tfoot, tr, td, th {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    display: block;
+    word-wrap: break-word;
+  }
+
+  /* Prevent pre/code overflow */
+  pre, code {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    white-space: pre-wrap !important;
+    word-wrap: break-word !important;
+  }
+
+  /* Prevent form elements from causing overflow */
+  input, textarea, select, button {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Ensure motion elements don't overflow */
+  .motion, .motion-div, .framer-motion {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+  }
+
+  /* Prevent fixed/absolute positioning from causing overflow */
+  .fixed, .absolute, .relative {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Prevent animations from causing overflow */
+  @keyframes {
+    overflow-x: hidden !important;
+  }
+
+  /* Prevent transitions from causing overflow */
+  * {
+    transition-property: transform, opacity, color, background, border !important;
   }
 }
 
@@ -587,11 +704,139 @@ img, video, canvas {
   /* Extra small mobile fixes */
   html, body {
     overflow-x: hidden !important;
+    overflow-y: auto !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    min-width: 100vw !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    touch-action: pan-y pinch-zoom !important;
+    -webkit-overflow-scrolling: touch !important;
   }
 
-  /* Prevent fixed positioning from causing overflow */
-  .fixed {
+  /* Force all elements to stay within viewport */
+  * {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    word-wrap: break-word !important;
+  }
+
+  /* Prevent fixed/absolute positioning from causing overflow */
+  .fixed, .absolute, .relative {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Ensure all containers respect viewport */
+  section, div, main, header, footer, nav, aside, article, form {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    width: 100% !important;
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+
+  /* Ensure all images respect viewport */
+  img, picture, svg, video, canvas {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block;
+    overflow-x: hidden !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Ensure all text respects viewport */
+  p, span, div, a, h1, h2, h3, h4, h5, h6, button, label, input, textarea, select, li, td, th {
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    word-wrap: break-word !important;
+    hyphens: auto !important;
+    white-space: normal !important;
+  }
+
+  /* Prevent grid/flex from causing overflow */
+  .grid, .flex, .flex-row, .flex-col, .flex-wrap {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* Ensure form elements respect viewport */
+  input, textarea, select, button {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Prevent animations from causing overflow */
+  @keyframes, @-webkit-keyframes {
+    overflow-x: hidden !important;
+  }
+
+  /* Prevent transitions from causing overflow */
+  * {
+    transition-property: transform, opacity, color, background, border, box-shadow !important;
+  }
+
+  /* Ensure motion elements respect viewport */
+  .motion, .motion-div, .framer-motion, [data-framer-motion], [data-motion] {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Prevent badges/buttons from causing overflow */
+  .badge, .btn, .btn-gold, .btn-outline {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    white-space: normal !important;
+  }
+
+  /* Prevent cards from causing overflow */
+  .card, .glass-card, .menu-card, .gallery-item, .testimonial-card {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Prevent time slots from causing overflow */
+  .time-slot {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    white-space: normal !important;
+  }
+
+  /* Ensure all containers use proper box-sizing */
+  * {
+    box-sizing: border-box !important;
+  }
+
+  /* Prevent margin from causing overflow */
+  * {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Add safe area for mobile devices */
+  * {
+    padding-left: calc(max(0px, env(safe-area-inset-left))) !important;
+    padding-right: calc(max(0px, env(safe-area-inset-right))) !important;
+  }
+}
+
+/* Tablet fixes */
+@media (min-width: 641px) and (max-width: 1024px) {
+  html, body {
+    overflow-x: hidden !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+  }
+
+  section, div, main {
     max-width: 100vw;
+    overflow-x: hidden;
   }
 }
 
@@ -612,4 +857,155 @@ img, video, canvas {
   width: 1px;
   height: 100%;
   background: linear-gradient(180deg, transparent, var(--noir-border), transparent);
+}
+
+/* ── DOCUMENT-LEVEL OVERFLOW PREVENTION ── */
+html {
+  overflow-x: hidden !important;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  position: relative !important;
+  touch-action: pan-y pinch-zoom;
+}
+
+body {
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  min-width: 100vw !important;
+  position: relative !important;
+  touch-action: pan-y pinch-zoom;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Force all elements to respect viewport */
+* {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+}
+
+/* Prevent elements from exceeding viewport */
+section, div, main, header, footer, nav, aside, article, form, button, a, p, h1, h2, h3, h4, h5, h6, span, ul, ol, li {
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
+  position: relative;
+}
+
+/* Prevent images from causing overflow */
+img, picture, svg, video, canvas {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block;
+  overflow-x: hidden;
+}
+
+/* Prevent text overflow */
+p, span, div, h1, h2, h3, h4, h5, h6, a, button {
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
+
+/* Prevent table overflow */
+table, tbody, thead, tfoot, tr, td, th {
+  max-width: 100%;
+  overflow-x: hidden;
+  display: block;
+}
+
+/* Prevent pre/code overflow */
+pre, code {
+  max-width: 100%;
+  overflow-x: hidden;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* ── TABLET-SPECIFIC OVERFLOW PREVENTION ── */
+@media (min-width: 641px) and (max-width: 1024px) {
+  html, body {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    min-width: 100vw !important;
+    position: relative !important;
+    touch-action: pan-y pinch-zoom !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  /* Force all elements to stay within viewport */
+  * {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    word-wrap: break-word !important;
+  }
+
+  /* Ensure all containers respect viewport */
+  section, div, main, header, footer, nav, aside, article, form {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    width: 100% !important;
+  }
+
+  /* Ensure all containers stay within viewport */
+  .max-w-7xl, .max-w-6xl, .max-w-5xl, .max-w-4xl, .max-w-3xl, .max-w-2xl, .max-w-xl, .max-w-lg, .max-w-md, .max-w-sm {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Ensure all images respect viewport */
+  img, picture, svg, video, canvas {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block;
+    overflow-x: hidden !important;
+  }
+
+  /* Ensure all text respects viewport */
+  p, span, div, a, h1, h2, h3, h4, h5, h6, button, label, input, textarea, select, li {
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+
+  /* Prevent grid/flex from causing overflow */
+  .grid, .flex, .flex-row, .flex-col, .flex-wrap {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* Ensure form elements respect viewport */
+  input, textarea, select, button {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Prevent motion elements from causing overflow */
+  .motion, .motion-div, .framer-motion, [data-framer-motion], [data-motion] {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Prevent cards from causing overflow */
+  .card, .glass-card, .menu-card, .gallery-item, .testimonial-card {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Ensure all containers use proper box-sizing */
+  * {
+    box-sizing: border-box !important;
+  }
+
+  /* Prevent badges/buttons from causing overflow */
+  .badge, .btn, .btn-gold, .btn-outline {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
 }

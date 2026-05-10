@@ -12,19 +12,19 @@ export default function Layout({ children }) {
   }, [])
 
   return (
-    <div className="min-h-screen w-full overflow-x-hidden bg-[var(--noir)]">
+    <div className="min-h-screen w-full overflow-x-hidden bg-[var(--noir)]" style={{ maxWidth: '100vw', overflowX: 'hidden', position: 'relative' }}>
       {loading && (
-        <div className="preloader">
+        <div className="preloader" style={{ maxWidth: '100vw', overflowX: 'hidden' }}>
           <div className="preloader-logo">PrestigeFlow</div>
           <div className="preloader-line" />
           <div className="preloader-tag">Restaurant Gastronomique — Paris</div>
         </div>
       )}
 
-      <div className={`noise-overlay transition-opacity duration-700 ${loading ? 'opacity-0 invisible' : 'opacity-100'}`}>
+      <div className={`noise-overlay transition-opacity duration-700 ${loading ? 'opacity-0 invisible' : 'opacity-100'}`} style={{ maxWidth: '100vw', overflowX: 'hidden' }}>
         <Navbar />
         <CartDrawer />
-        <main className="page-enter">{children}</main>
+        <main className="page-enter" style={{ maxWidth: '100vw', overflowX: 'hidden' }}>{children}</main>
         <Footer />
       </div>
     </div>
