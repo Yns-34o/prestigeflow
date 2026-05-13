@@ -1,4 +1,10 @@
-<svg width="130" height="36" viewBox="0 0 130 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <text x="2" y="28" font-family="UberMove, Arial, sans-serif" font-size="24" font-weight="bold" fill="#06C167">Uber</text>
-  <text x="55" y="28" font-family="UberMove, Arial, sans-serif" font-size="20" font-weight="500" fill="#06C167">Eats</text>
+<svg width="140" height="40" viewBox="0 0 140 40" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .text-uber { fill: white; font-family: Arial, sans-serif; font-weight: 700; }
+      .text-eats { fill: white; font-family: Arial, sans-serif; font-weight: 500; }
+    </style>
+  </defs>
+  <text x="0" y="28" class="text-uber" font-size="22">Uber</text>
+  <text x="45" y="28" class="text-eats" font-size="18">Eats</text>
 </svg>
