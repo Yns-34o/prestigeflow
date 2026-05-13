@@ -241,7 +241,7 @@ export default function Navbar() {
                 className="flex items-center gap-2 px-4 py-2.5 bg-white rounded-xl hover:shadow-lg transition-all duration-300"
               >
                 <img
-                  src="https://logos-world.net/wp-content/uploads/2022/09/Uber-Eats-symbol-black.png"
+                  src="/uber-eats-logo.svg"
                   alt="Uber Eats"
                   className="w-6 h-6 object-contain"
                 />
@@ -254,7 +254,7 @@ export default function Navbar() {
                 className="flex items-center gap-2 px-4 py-2.5 bg-white rounded-xl hover:shadow-lg transition-all duration-300"
               >
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Deliveroo_logo.svg/200px-Deliveroo_logo.svg.png"
+                  src="/deliveroo-logo.svg"
                   alt="Deliveroo"
                   className="h-6 w-auto object-contain"
                 />
