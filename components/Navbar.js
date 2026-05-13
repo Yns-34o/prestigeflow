@@ -232,7 +232,37 @@ export default function Navbar() {
             </nav>
 
             {/* Right: Actions */}
-            <div className="flex items-center gap-4 flex-shrink-0">
+            <div className="flex items-center gap-3 flex-shrink-0">
+              {/* Delivery Buttons */}
+              <div className="hidden xl:flex items-center gap-2 pr-3 border-r border-white/10">
+                <a
+                  href="https://www.ubereats.com/fr/paris/food-delivery/prestigeflow"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group p-2 rounded-lg hover:bg-white/5 transition-colors"
+                  title="Commander sur Uber Eats"
+                >
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Uber_Eats_2020.svg/240px-Uber_Eats_2020.svg.png"
+                    alt="Uber Eats"
+                    className="w-8 h-8 object-contain opacity-80 group-hover:opacity-100 transition-opacity"
+                  />
+                </a>
+                <a
+                  href="https://www.deliveroo.fr/fr/menu/paris/prestigeflow"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group p-2 rounded-lg hover:bg-white/5 transition-colors"
+                  title="Commander sur Deliveroo"
+                >
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Deliveroo_logo.svg/240px-Deliveroo_logo.svg.png"
+                    alt="Deliveroo"
+                    className="w-8 h-8 object-contain opacity-80 group-hover:opacity-100 transition-opacity"
+                  />
+                </a>
+              </div>
+
               <motion.button
                 onClick={() => setIsOpen(true)}
                 whileHover={{ scale: 1.05 }}

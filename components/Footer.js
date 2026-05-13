@@ -105,22 +105,29 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="group flex items-center gap-3 p-3 bg-white/[0.02] rounded-lg hover:bg-white/[0.06] transition-all duration-300"
                 >
-                  <div className="w-8 h-8 flex items-center justify-center bg-white/10 rounded-lg group-hover:bg-[var(--gold)] group-hover:text-[var(--noir)] transition-all">
+                  <div className={`w-10 h-10 flex items-center justify-center rounded-lg transition-all ${
+                    link.name === 'Uber Eats'
+                      ? 'bg-[#06C167]/20 group-hover:bg-[#06C167]'
+                      : 'bg-[#00CCBC]/20 group-hover:bg-[#00CCBC]'
+                  }`}>
                     {link.name === 'Uber Eats' ? (
                       <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Uber_Eats_2020.svg/1200px-Uber_Eats_2020.svg.png"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Uber_Eats_2020.svg/240px-Uber_Eats_2020.svg.png"
                         alt="Uber Eats"
-                        className="w-6 h-6 object-contain"
+                        className="w-7 h-7 object-contain"
                       />
                     ) : (
                       <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Deliveroo_logo.svg/1200px-Deliveroo_logo.svg.png"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Deliveroo_logo.svg/240px-Deliveroo_logo.svg.png"
                         alt="Deliveroo"
-                        className="w-6 h-6 object-contain"
+                        className="w-7 h-7 object-contain"
                       />
                     )}
                   </div>
-                  <span className="text-[var(--text-secondary)] text-sm group-hover:text-white transition-colors">{link.name}</span>
+                  <div className="flex-1">
+                    <span className="text-white text-sm font-medium block">{link.name}</span>
+                    <span className="text-[var(--text-tertiary)] text-xs">Commander &rarr;</span>
+                  </div>
                 </a>
               ))}
             </div>

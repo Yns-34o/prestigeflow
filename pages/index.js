@@ -538,54 +538,57 @@ export default function Home() {
       </ParallaxSection>
 
       {/* ══════════ DELIVERY PLATFORMS ══════════ */}
-      <section className="section-padding bg-[var(--noir-light)]">
+      <section className="section-padding bg-[var(--noir-light)] border-y border-white/5">
         <div className="max-w-4xl mx-auto px-4 md:px-6 text-center w-full">
           <Reveal>
-            <span className="text-[var(--gold)] text-[10px] tracking-[0.4em] uppercase">Livraison à domicile</span>
+            <div className="inline-flex items-center gap-2 mb-6">
+              <div className="w-12 h-[1px] bg-[var(--gold)]" />
+              <span className="text-[var(--gold)] text-[10px] tracking-[0.4em] uppercase">Livraison à domicile</span>
+              <div className="w-12 h-[1px] bg-[var(--gold)]" />
+            </div>
             <h2 className="font-display text-2xl md:text-3xl lg:text-[4rem] text-white mt-4 mb-4">
               Commandez sur nos <span className="italic text-gradient-gold">partenaires</span>
             </h2>
-            <p className="text-[var(--text-secondary)] leading-relaxed mb-10 text-[15px] px-2">
-              Profitez de nos créations culinaires chez vous grâce à nos partenaires de livraison.
+            <p className="text-[var(--text-secondary)] leading-relaxed mb-12 text-[15px] px-2 max-w-2xl mx-auto">
+              Profitez de nos créations culinaires d&apos;exception chez vous grâce à nos partenaires de livraison premium.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-8">
               <a
                 href="https://www.ubereats.com/fr/paris/food-delivery/prestigeflow"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center justify-center gap-3 px-8 py-4 bg-white/[0.02] border border-white/10 rounded-xl hover:bg-white/[0.06] hover:border-[var(--gold)] transition-all"
+                className="group flex items-center justify-center gap-4 px-10 py-6 bg-gradient-to-br from-[#06C167] to-[#00A854] rounded-2xl hover:scale-105 hover:shadow-[0_8px_30px_rgba(6,193,103,0.3)] transition-all duration-300"
               >
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Uber_Eats_2020.svg/1200px-Uber_Eats_2020.svg.png"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Uber_Eats_2020.svg/240px-Uber_Eats_2020.svg.png"
                   alt="Uber Eats"
-                  className="w-7 h-7 object-contain brightness-0 invert opacity-70 group-hover:opacity-100 group-hover:brightness-100 transition-all"
+                  className="h-9 object-contain"
                 />
-                <span className="text-white text-sm font-medium">Uber Eats</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--text-tertiary)] group-hover:text-[var(--gold)] transition-colors">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                  <polyline points="15 3 21 3 21 9"/>
-                  <line x1="10" y1="14" x2="21" y2="3"/>
-                </svg>
+                <div className="text-left">
+                  <span className="text-white text-lg font-semibold block">Uber Eats</span>
+                  <span className="text-white/80 text-xs">Commander maintenant</span>
+                </div>
               </a>
               <a
                 href="https://www.deliveroo.fr/fr/menu/paris/prestigeflow"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center justify-center gap-3 px-8 py-4 bg-white/[0.02] border border-white/10 rounded-xl hover:bg-white/[0.06] hover:border-[var(--gold)] transition-all"
+                className="group flex items-center justify-center gap-4 px-10 py-6 bg-gradient-to-br from-[#00CCBC] to-[#00B5A6] rounded-2xl hover:scale-105 hover:shadow-[0_8px_30px_rgba(0,204,188,0.3)] transition-all duration-300"
               >
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Deliveroo_logo.svg/1200px-Deliveroo_logo.svg.png"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Deliveroo_logo.svg/240px-Deliveroo_logo.svg.png"
                   alt="Deliveroo"
-                  className="w-7 h-7 object-contain brightness-0 invert opacity-70 group-hover:opacity-100 group-hover:brightness-100 transition-all"
+                  className="h-9 object-contain"
                 />
-                <span className="text-white text-sm font-medium">Deliveroo</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--text-tertiary)] group-hover:text-[var(--gold)] transition-colors">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                  <polyline points="15 3 21 3 21 9"/>
-                  <line x1="10" y1="14" x2="21" y2="3"/>
-                </svg>
+                <div className="text-left">
+                  <span className="text-white text-lg font-semibold block">Deliveroo</span>
+                  <span className="text-white/80 text-xs">Commander maintenant</span>
+                </div>
               </a>
             </div>
+            <p className="text-[var(--text-muted)] text-xs tracking-wider">
+              <span className="text-[var(--gold)]">★</span> Service premium · Livraison rapide · Qualité préservée
+            </p>
           </Reveal>
         </div>
       </section>

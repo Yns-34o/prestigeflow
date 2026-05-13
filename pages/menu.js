@@ -213,33 +213,47 @@ export default function MenuPage() {
             transition={{ duration: 0.6 }}
             className="mt-16 pt-10 border-t border-white/5"
           >
-            <h3 className="font-display text-xl text-white mb-6 text-center">Livraison à domicile</h3>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="text-center mb-8">
+              <div className="inline-flex items-center gap-2 mb-4">
+                <div className="w-10 h-[1px] bg-[var(--gold)]" />
+                <span className="text-[var(--gold)] text-[10px] tracking-[0.4em] uppercase">Livraison à domicile</span>
+                <div className="w-10 h-[1px] bg-[var(--gold)]" />
+              </div>
+              <h3 className="font-display text-2xl text-white mb-2">Commandez sur nos partenaires</h3>
+              <p className="text-[var(--text-secondary)] text-sm">Nos créations livrées chez vous en un clic</p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-5 justify-center max-w-2xl mx-auto">
               <a
                 href="https://www.ubereats.com/fr/paris/food-delivery/prestigeflow"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center justify-center gap-3 px-6 py-3 bg-white/[0.02] border border-white/10 rounded-lg hover:bg-white/[0.06] hover:border-[var(--gold)] transition-all"
+                className="group flex items-center justify-center gap-4 px-8 py-5 bg-gradient-to-br from-[#06C167] to-[#00A854] rounded-xl hover:scale-105 hover:shadow-[0_6px_20px_rgba(6,193,103,0.25)] transition-all duration-300"
               >
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Uber_Eats_2020.svg/1200px-Uber_Eats_2020.svg.png"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Uber_Eats_2020.svg/240px-Uber_Eats_2020.svg.png"
                   alt="Uber Eats"
-                  className="w-6 h-6 object-contain brightness-0 invert opacity-70 group-hover:opacity-100 group-hover:brightness-100 transition-all"
+                  className="h-8 object-contain"
                 />
-                <span className="text-white text-sm">Commander sur Uber Eats</span>
+                <div className="text-left">
+                  <span className="text-white font-semibold block">Uber Eats</span>
+                  <span className="text-white/80 text-xs">Commander</span>
+                </div>
               </a>
               <a
                 href="https://www.deliveroo.fr/fr/menu/paris/prestigeflow"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center justify-center gap-3 px-6 py-3 bg-white/[0.02] border border-white/10 rounded-lg hover:bg-white/[0.06] hover:border-[var(--gold)] transition-all"
+                className="group flex items-center justify-center gap-4 px-8 py-5 bg-gradient-to-br from-[#00CCBC] to-[#00B5A6] rounded-xl hover:scale-105 hover:shadow-[0_6px_20px_rgba(0,204,188,0.25)] transition-all duration-300"
               >
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Deliveroo_logo.svg/1200px-Deliveroo_logo.svg.png"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Deliveroo_logo.svg/240px-Deliveroo_logo.svg.png"
                   alt="Deliveroo"
-                  className="w-6 h-6 object-contain brightness-0 invert opacity-70 group-hover:opacity-100 group-hover:brightness-100 transition-all"
+                  className="h-8 object-contain"
                 />
-                <span className="text-white text-sm">Commander sur Deliveroo</span>
+                <div className="text-left">
+                  <span className="text-white font-semibold block">Deliveroo</span>
+                  <span className="text-white/80 text-xs">Commander</span>
+                </div>
               </a>
             </div>
           </motion.div>
