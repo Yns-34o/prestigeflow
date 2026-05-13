@@ -232,38 +232,36 @@ export default function Navbar() {
             </nav>
 
             {/* Right: Actions */}
-            <div className="flex items-center gap-3 flex-shrink-0">
+            <div className="flex items-center gap-2 flex-shrink-0">
               {/* Delivery Buttons */}
-              <div className="hidden lg:flex items-center gap-1.5 pr-4 border-r border-white/10">
-                <a
-                  href="https://www.ubereats.com/fr/paris/food-delivery/prestigeflow"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-white/5 transition-all"
-                  title="Commander sur Uber Eats"
-                >
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Uber_Eats_2020.svg/240px-Uber_Eats_2020.svg.png"
-                    alt="Uber Eats"
-                    className="w-6 h-6 object-contain"
-                  />
-                  <span className="text-white text-[10px] font-medium group-hover:text-[var(--gold)] transition-colors">Uber Eats</span>
-                </a>
-                <a
-                  href="https://www.deliveroo.fr/fr/menu/paris/prestigeflow"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-white/5 transition-all"
-                  title="Commander sur Deliveroo"
-                >
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Deliveroo_logo.svg/240px-Deliveroo_logo.svg.png"
-                    alt="Deliveroo"
-                    className="w-6 h-6 object-contain"
-                  />
-                  <span className="text-white text-[10px] font-medium group-hover:text-[var(--gold)] transition-colors">Deliveroo</span>
-                </a>
-              </div>
+              <a
+                href="https://www.ubereats.com/fr/paris/food-delivery/prestigeflow"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2.5 bg-white/5 rounded-xl hover:bg-[#06C167]/15 hover:shadow-lg hover:shadow-[#06C167]/20 transition-all duration-300"
+              >
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Uber_Eats_2020.svg/240px-Uber_Eats_2020.svg.png"
+                  alt="Uber Eats"
+                  className="w-7 h-7 object-contain"
+                />
+                <span className="text-white text-xs font-semibold">Uber Eats</span>
+              </a>
+              <a
+                href="https://www.deliveroo.fr/fr/menu/paris/prestigeflow"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2.5 bg-white/5 rounded-xl hover:bg-[#00CCBC]/15 hover:shadow-lg hover:shadow-[#00CCBC]/20 transition-all duration-300"
+              >
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Deliveroo_logo.svg/240px-Deliveroo_logo.svg.png"
+                  alt="Deliveroo"
+                  className="w-7 h-7 object-contain"
+                />
+                <span className="text-white text-xs font-semibold">Deliveroo</span>
+              </a>
+
+              <div className="w-px h-6 bg-white/10" />
 
               <motion.button
                 onClick={() => setIsOpen(true)}
@@ -289,7 +287,7 @@ export default function Navbar() {
 
               <Link
                 href="/reservation"
-                className="flex items-center gap-2 px-5 py-2.5 bg-[var(--gold)] text-[var(--noir)] text-[10px] tracking-[0.15em] uppercase font-semibold rounded-full hover:bg-[var(--gold-light)] transition-colors"
+                className="hidden sm:flex items-center gap-2 px-5 py-2.5 bg-[var(--gold)] text-[var(--noir)] text-xs tracking-wider uppercase font-semibold rounded-full hover:bg-[var(--gold-light)] transition-colors"
               >
                 Réserver
               </Link>

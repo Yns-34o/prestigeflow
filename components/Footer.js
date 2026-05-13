@@ -103,24 +103,28 @@ export default function Footer() {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-3 p-3 bg-[var(--noir)] border border-white/10 rounded-lg hover:border-[var(--gold)] transition-all duration-300"
+                  className="group flex items-center gap-3 p-4 bg-white/[0.02] border border-white/10 rounded-xl hover:border-white/20 hover:bg-white/[0.04] transition-all duration-300"
                 >
-                  <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-sm">
+                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-300 ${
+                    link.name === 'Uber Eats'
+                      ? 'bg-gradient-to-br from-[#06C167] to-[#00A854]'
+                      : 'bg-gradient-to-br from-[#00CCBC] to-[#00B5A6]'
+                  }`}>
                     {link.name === 'Uber Eats' ? (
                       <img
                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Uber_Eats_2020.svg/240px-Uber_Eats_2020.svg.png"
                         alt="Uber Eats"
-                        className="w-6 h-6 object-contain"
+                        className="w-7 h-7 object-contain"
                       />
                     ) : (
                       <img
                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Deliveroo_logo.svg/240px-Deliveroo_logo.svg.png"
                         alt="Deliveroo"
-                        className="w-6 h-6 object-contain"
+                        className="w-7 h-7 object-contain"
                       />
                     )}
                   </div>
-                  <span className="text-white text-sm font-medium group-hover:text-[var(--gold)] transition-colors">{link.name}</span>
+                  <span className="text-white text-sm font-medium">{link.name}</span>
                 </a>
               ))}
             </div>

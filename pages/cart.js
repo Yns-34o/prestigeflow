@@ -302,44 +302,44 @@ export default function CartPage() {
 
                       {/* Delivery Platforms */}
                       <div className="mt-6 pt-6 border-t border-white/5">
-                        <div className="flex items-center justify-center gap-3 mb-5">
-                          <div className="h-px w-8 bg-gradient-to-r from-transparent to-[var(--gold)]/20" />
+                        <div className="flex items-center justify-center gap-4 mb-6">
+                          <div className="h-px w-12 bg-gradient-to-r from-transparent to-[var(--gold)]/20" />
                           <span className="text-[var(--text-tertiary)] text-[10px] tracking-[0.2em] uppercase">Ou commandez via</span>
-                          <div className="h-px w-8 bg-gradient-to-l from-transparent to-[var(--gold)]/20" />
+                          <div className="h-px w-12 bg-gradient-to-l from-transparent to-[var(--gold)]/20" />
                         </div>
-                        <div className="flex gap-3">
+                        <div className="flex gap-4">
                           <a
                             href="https://www.ubereats.com/fr/paris/food-delivery/prestigeflow"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group flex-1 bg-[var(--noir)] border border-white/10 rounded-lg p-3 hover:border-[var(--gold)] transition-all"
+                            className="group flex-1 bg-white/[0.02] border border-white/10 rounded-xl p-4 hover:bg-white/[0.04] transition-all"
                           >
-                            <div className="flex items-center justify-center gap-2">
-                              <div className="w-8 h-8 bg-white rounded-md flex items-center justify-center">
+                            <div className="flex items-center justify-center gap-3">
+                              <div className="w-11 h-11 rounded-lg flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-300 bg-gradient-to-br from-[#06C167] to-[#00A854]">
                                 <img
                                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Uber_Eats_2020.svg/240px-Uber_Eats_2020.svg.png"
                                   alt="Uber Eats"
-                                  className="w-5 h-5 object-contain"
+                                  className="w-7 h-7 object-contain"
                                 />
                               </div>
-                              <span className="text-white text-[10px] font-medium group-hover:text-[var(--gold)] transition-colors">Uber Eats</span>
+                              <span className="text-white text-[12px] font-semibold">Uber Eats</span>
                             </div>
                           </a>
                           <a
                             href="https://www.deliveroo.fr/fr/menu/paris/prestigeflow"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group flex-1 bg-[var(--noir)] border border-white/10 rounded-lg p-3 hover:border-[var(--gold)] transition-all"
+                            className="group flex-1 bg-white/[0.02] border border-white/10 rounded-xl p-4 hover:bg-white/[0.04] transition-all"
                           >
-                            <div className="flex items-center justify-center gap-2">
-                              <div className="w-8 h-8 bg-white rounded-md flex items-center justify-center">
+                            <div className="flex items-center justify-center gap-3">
+                              <div className="w-11 h-11 rounded-lg flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-300 bg-gradient-to-br from-[#00CCBC] to-[#00B5A6]">
                                 <img
                                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Deliveroo_logo.svg/240px-Deliveroo_logo.svg.png"
                                   alt="Deliveroo"
-                                  className="w-5 h-5 object-contain"
+                                  className="w-7 h-7 object-contain"
                                 />
                               </div>
-                              <span className="text-white text-[10px] font-medium group-hover:text-[var(--gold)] transition-colors">Deliveroo</span>
+                              <span className="text-white text-[12px] font-semibold">Deliveroo</span>
                             </div>
                           </a>
                         </div>

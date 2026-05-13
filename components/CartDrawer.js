@@ -132,34 +132,34 @@ export default function CartDrawer() {
                       href="https://www.ubereats.com/fr/paris/food-delivery/prestigeflow"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex-1 bg-[var(--noir)] border border-white/10 rounded-lg p-3 hover:border-[var(--gold)] transition-all"
+                      className="group flex-1 bg-white/[0.02] border border-white/10 rounded-xl p-3 hover:bg-white/[0.04] transition-all"
                     >
                       <div className="flex items-center justify-center gap-2">
-                        <div className="w-8 h-8 bg-white rounded-md flex items-center justify-center">
+                        <div className="w-10 h-10 rounded-lg flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-300 bg-gradient-to-br from-[#06C167] to-[#00A854]">
                           <img
                             src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Uber_Eats_2020.svg/240px-Uber_Eats_2020.svg.png"
                             alt="Uber Eats"
-                            className="w-5 h-5 object-contain"
+                            className="w-6 h-6 object-contain"
                           />
                         </div>
-                        <span className="text-white text-[11px] font-medium group-hover:text-[var(--gold)] transition-colors">Uber Eats</span>
+                        <span className="text-white text-[11px] font-medium">Uber Eats</span>
                       </div>
                     </a>
                     <a
                       href="https://www.deliveroo.fr/fr/menu/paris/prestigeflow"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex-1 bg-[var(--noir)] border border-white/10 rounded-lg p-3 hover:border-[var(--gold)] transition-all"
+                      className="group flex-1 bg-white/[0.02] border border-white/10 rounded-xl p-3 hover:bg-white/[0.04] transition-all"
                     >
                       <div className="flex items-center justify-center gap-2">
-                        <div className="w-8 h-8 bg-white rounded-md flex items-center justify-center">
+                        <div className="w-10 h-10 rounded-lg flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-300 bg-gradient-to-br from-[#00CCBC] to-[#00B5A6]">
                           <img
                             src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Deliveroo_logo.svg/240px-Deliveroo_logo.svg.png"
                             alt="Deliveroo"
-                            className="w-5 h-5 object-contain"
+                            className="w-6 h-6 object-contain"
                           />
                         </div>
-                        <span className="text-white text-[11px] font-medium group-hover:text-[var(--gold)] transition-colors">Deliveroo</span>
+                        <span className="text-white text-[11px] font-medium">Deliveroo</span>
                       </div>
                     </a>
                   </div>

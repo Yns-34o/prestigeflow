@@ -213,46 +213,43 @@ export default function MenuPage() {
             transition={{ duration: 0.6 }}
             className="mt-20 pt-12 border-t border-white/5"
           >
-            <div className="text-center mb-8">
-              <span className="text-[var(--gold)] text-[10px] tracking-[0.4em] uppercase flex items-center justify-center gap-4">
-                <div className="h-px w-10 bg-[var(--gold)]" />
-                Livraison à domicile
-                <div className="h-px w-10 bg-[var(--gold)]" />
-              </span>
-              <h3 className="font-display text-2xl md:text-3xl text-white mt-6 mb-3">
-                Commandez via nos <span className="italic text-[var(--gold)]">partenaires</span>
+            <div className="text-center mb-12">
+              <span className="text-[var(--gold)] text-[11px] tracking-[0.35em] uppercase font-medium">Livraison Express</span>
+              <h3 className="font-display text-2xl md:text-3xl text-white mt-4 mb-4">
+                Commandez via nos <span className="italic text-gradient-gold">partenaires</span>
               </h3>
               <p className="text-[var(--text-secondary)] text-sm max-w-lg mx-auto">Nos créations livrées chez vous en 30-45 minutes</p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-2xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
               <motion.a
                 href="https://www.ubereats.com/fr/paris/food-delivery/prestigeflow"
                 target="_blank"
                 rel="noopener noreferrer"
-                initial={{ opacity: 0, y: 15 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1, duration: 0.5 }}
-                whileHover={{ y: -3 }}
-                className="group bg-[var(--noir)] border border-white/10 rounded-xl p-6 hover:border-[var(--gold)] hover:shadow-[0_6px_20px_rgba(200,169,126,0.08)] transition-all duration-300"
+                whileHover={{ y: -6, scale: 1.02 }}
+                className="group relative"
               >
-                <div className="flex items-center justify-center mb-4">
-                  <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center shadow-md">
+                <div className="absolute -inset-0.5 bg-gradient-to-br from-[#06C167]/15 to-transparent blur-xl rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
+                <div className="relative bg-gradient-to-br from-white/[0.04] to-white/[0.01] border border-white/10 rounded-2xl p-8 hover:border-[#06C167]/30 transition-all duration-400">
+                  <div className="w-20 h-20 mx-auto mb-6 bg-white rounded-xl flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-400">
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Uber_Eats_2020.svg/240px-Uber_Eats_2020.svg.png"
                       alt="Uber Eats"
-                      className="w-11 h-11 object-contain"
+                      className="w-14 h-14 object-contain"
                     />
                   </div>
-                </div>
-                <h4 className="font-display text-lg text-white mb-2">Uber Eats</h4>
-                <p className="text-[var(--text-tertiary)] text-xs mb-4">Livraison rapide</p>
-                <div className="inline-flex items-center gap-2 text-[var(--gold)] text-xs font-medium group-hover:gap-3 transition-all">
-                  Commander
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-0.5 transition-transform">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                  </svg>
+                  <h4 className="font-display text-xl text-white mb-3">Uber Eats</h4>
+                  <p className="text-[var(--text-secondary)] text-sm mb-6">Livraison rapide et fiable</p>
+                  <div className="inline-flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-[#06C167] to-[#00A854] rounded-lg text-white font-semibold text-sm group-hover:from-[#00A854] group-hover:to-[#06C167] transition-all duration-300 shadow-lg shadow-[#06C167]/20">
+                    Commander
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform">
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                  </div>
                 </div>
               </motion.a>
 
@@ -260,29 +257,30 @@ export default function MenuPage() {
                 href="https://www.deliveroo.fr/fr/menu/paris/prestigeflow"
                 target="_blank"
                 rel="noopener noreferrer"
-                initial={{ opacity: 0, y: 15 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2, duration: 0.5 }}
-                whileHover={{ y: -3 }}
-                className="group bg-[var(--noir)] border border-white/10 rounded-xl p-6 hover:border-[var(--gold)] hover:shadow-[0_6px_20px_rgba(200,169,126,0.08)] transition-all duration-300"
+                whileHover={{ y: -6, scale: 1.02 }}
+                className="group relative"
               >
-                <div className="flex items-center justify-center mb-4">
-                  <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center shadow-md">
+                <div className="absolute -inset-0.5 bg-gradient-to-br from-[#00CCBC]/15 to-transparent blur-xl rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
+                <div className="relative bg-gradient-to-br from-white/[0.04] to-white/[0.01] border border-white/10 rounded-2xl p-8 hover:border-[#00CCBC]/30 transition-all duration-400">
+                  <div className="w-20 h-20 mx-auto mb-6 bg-white rounded-xl flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-400">
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Deliveroo_logo.svg/240px-Deliveroo_logo.svg.png"
                       alt="Deliveroo"
-                      className="w-11 h-11 object-contain"
+                      className="w-14 h-14 object-contain"
                     />
                   </div>
-                </div>
-                <h4 className="font-display text-lg text-white mb-2">Deliveroo</h4>
-                <p className="text-[var(--text-tertiary)] text-xs mb-4">La qualité livrée</p>
-                <div className="inline-flex items-center gap-2 text-[var(--gold)] text-xs font-medium group-hover:gap-3 transition-all">
-                  Commander
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-0.5 transition-transform">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                  </svg>
+                  <h4 className="font-display text-xl text-white mb-3">Deliveroo</h4>
+                  <p className="text-[var(--text-secondary)] text-sm mb-6">La qualité livrée</p>
+                  <div className="inline-flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-[#00CCBC] to-[#00B5A6] rounded-lg text-white font-semibold text-sm group-hover:from-[#00B5A6] group-hover:to-[#00CCBC] transition-all duration-300 shadow-lg shadow-[#00CCBC]/20">
+                    Commander
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform">
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                  </div>
                 </div>
               </motion.a>
             </div>
