@@ -112,13 +112,13 @@ export default function Footer() {
                   }`}>
                     {link.name === 'Uber Eats' ? (
                       <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Uber_Eats_2020.svg/240px-Uber_Eats_2020.svg.png"
+                        src="https://logos-world.net/wp-content/uploads/2022/09/Uber-Eats-symbol-black.png"
                         alt="Uber Eats"
                         className="w-7 h-7 object-contain"
                       />
                     ) : (
                       <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Deliveroo_logo.svg/240px-Deliveroo_logo.svg.png"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Deliveroo_logo.svg/200px-Deliveroo_logo.svg.png"
                         alt="Deliveroo"
                         className="w-7 h-7 object-contain"
                       />

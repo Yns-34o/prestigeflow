@@ -571,7 +571,7 @@ export default function Home() {
                 <div className="relative bg-gradient-to-br from-white/[0.04] to-white/[0.01] border border-white/10 rounded-3xl p-10 hover:border-[#06C167]/30 transition-all duration-500">
                   <div className="w-24 h-24 mx-auto mb-8 bg-white rounded-2xl flex items-center justify-center shadow-xl group-hover:scale-105 transition-transform duration-500">
                     <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Uber_Eats_2020.svg/240px-Uber_Eats_2020.svg.png"
+                      src="https://logos-world.net/wp-content/uploads/2022/09/Uber-Eats-symbol-black.png"
                       alt="Uber Eats"
                       className="w-16 h-16 object-contain"
                     />
@@ -604,7 +604,7 @@ export default function Home() {
                 <div className="relative bg-gradient-to-br from-white/[0.04] to-white/[0.01] border border-white/10 rounded-3xl p-10 hover:border-[#00CCBC]/30 transition-all duration-500">
                   <div className="w-24 h-24 mx-auto mb-8 bg-white rounded-2xl flex items-center justify-center shadow-xl group-hover:scale-105 transition-transform duration-500">
                     <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Deliveroo_logo.svg/240px-Deliveroo_logo.svg.png"
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Deliveroo_logo.svg/200px-Deliveroo_logo.svg.png"
                       alt="Deliveroo"
                       className="w-16 h-16 object-contain"
                     />

@@ -238,27 +238,27 @@ export default function Navbar() {
                 href="https://www.ubereats.com/fr/paris/food-delivery/prestigeflow"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2.5 bg-white/5 rounded-xl hover:bg-[#06C167]/15 hover:shadow-lg hover:shadow-[#06C167]/20 transition-all duration-300"
+                className="flex items-center gap-2 px-4 py-2.5 bg-white rounded-xl hover:shadow-lg transition-all duration-300"
               >
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Uber_Eats_2020.svg/240px-Uber_Eats_2020.svg.png"
+                  src="https://logos-world.net/wp-content/uploads/2022/09/Uber-Eats-symbol-black.png"
                   alt="Uber Eats"
-                  className="w-7 h-7 object-contain"
+                  className="w-6 h-6 object-contain"
                 />
-                <span className="text-white text-xs font-semibold">Uber Eats</span>
+                <span className="text-black text-xs font-semibold">Uber Eats</span>
               </a>
               <a
                 href="https://www.deliveroo.fr/fr/menu/paris/prestigeflow"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2.5 bg-white/5 rounded-xl hover:bg-[#00CCBC]/15 hover:shadow-lg hover:shadow-[#00CCBC]/20 transition-all duration-300"
+                className="flex items-center gap-2 px-4 py-2.5 bg-white rounded-xl hover:shadow-lg transition-all duration-300"
               >
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Deliveroo_logo.svg/240px-Deliveroo_logo.svg.png"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Deliveroo_logo.svg/200px-Deliveroo_logo.svg.png"
                   alt="Deliveroo"
-                  className="w-7 h-7 object-contain"
+                  className="h-6 w-auto object-contain"
                 />
-                <span className="text-white text-xs font-semibold">Deliveroo</span>
+                <span className="text-black text-xs font-semibold">Deliveroo</span>
               </a>
 
               <div className="w-px h-6 bg-white/10" />
