@@ -302,37 +302,47 @@ export default function CartPage() {
 
                       {/* Delivery Platforms */}
                       <div className="mt-6 pt-6 border-t border-white/5">
-                        <p className="text-[var(--text-tertiary)] text-[10px] tracking-[0.15em] uppercase mb-4 text-center flex items-center justify-center gap-2">
-                          <div className="w-6 h-[1px] bg-[var(--gold)]/30" />
-                          Ou commandez via
-                          <div className="w-6 h-[1px] bg-[var(--gold)]/30" />
-                        </p>
+                        <div className="flex items-center justify-center gap-2 mb-4">
+                          <div className="h-[1px] w-8 bg-gradient-to-r from-transparent to-[var(--gold)]/30" />
+                          <span className="text-[var(--text-tertiary)] text-[10px] tracking-[0.2em] uppercase">Ou commandez via</span>
+                          <div className="h-[1px] w-8 bg-gradient-to-l from-transparent to-[var(--gold)]/30" />
+                        </div>
                         <div className="flex gap-3">
                           <a
                             href="https://www.ubereats.com/fr/paris/food-delivery/prestigeflow"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex-1 flex items-center justify-center gap-2 py-3 bg-[#06C167]/10 border border-[#06C167]/20 rounded-lg hover:bg-[#06C167]/20 hover:border-[#06C167]/40 transition-all group"
+                            className="group flex-1 relative"
                           >
-                            <img
-                              src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Uber_Eats_2020.svg/240px-Uber_Eats_2020.svg.png"
-                              alt="Uber Eats"
-                              className="w-6 h-6 object-contain"
-                            />
-                            <span className="text-white text-[10px] font-medium group-hover:text-[#06C167] transition-colors">Uber Eats</span>
+                            <div className="absolute inset-0 bg-gradient-to-br from-[#06C167]/25 to-[#06C167]/0 blur-md rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                            <div className="relative flex items-center justify-center gap-2 py-3.5 bg-gradient-to-br from-white/[0.03] to-transparent border border-white/10 rounded-lg hover:border-[#06C167]/40 hover:scale-105 transition-all duration-300">
+                              <div className="w-8 h-8 bg-gradient-to-br from-[#06C167]/20 to-[#06C167]/5 rounded-lg flex items-center justify-center">
+                                <img
+                                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Uber_Eats_2020.svg/240px-Uber_Eats_2020.svg.png"
+                                  alt="Uber Eats"
+                                  className="w-5 h-5 object-contain"
+                                />
+                              </div>
+                              <span className="text-white text-[10px] font-medium group-hover:text-[#06C167] transition-colors">Uber Eats</span>
+                            </div>
                           </a>
                           <a
                             href="https://www.deliveroo.fr/fr/menu/paris/prestigeflow"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex-1 flex items-center justify-center gap-2 py-3 bg-[#00CCBC]/10 border border-[#00CCBC]/20 rounded-lg hover:bg-[#00CCBC]/20 hover:border-[#00CCBC]/40 transition-all group"
+                            className="group flex-1 relative"
                           >
-                            <img
-                              src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Deliveroo_logo.svg/240px-Deliveroo_logo.svg.png"
-                              alt="Deliveroo"
-                              className="w-6 h-6 object-contain"
-                            />
-                            <span className="text-white text-[10px] font-medium group-hover:text-[#00CCBC] transition-colors">Deliveroo</span>
+                            <div className="absolute inset-0 bg-gradient-to-br from-[#00CCBC]/25 to-[#00CCBC]/0 blur-md rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                            <div className="relative flex items-center justify-center gap-2 py-3.5 bg-gradient-to-br from-white/[0.03] to-transparent border border-white/10 rounded-lg hover:border-[#00CCBC]/40 hover:scale-105 transition-all duration-300">
+                              <div className="w-8 h-8 bg-gradient-to-br from-[#00CCBC]/20 to-[#00CCBC]/5 rounded-lg flex items-center justify-center">
+                                <img
+                                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Deliveroo_logo.svg/240px-Deliveroo_logo.svg.png"
+                                  alt="Deliveroo"
+                                  className="w-5 h-5 object-contain"
+                                />
+                              </div>
+                              <span className="text-white text-[10px] font-medium group-hover:text-[#00CCBC] transition-colors">Deliveroo</span>
+                            </div>
                           </a>
                         </div>
                       </div>

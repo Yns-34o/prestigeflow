@@ -126,31 +126,37 @@ export default function CartDrawer() {
 
                 {/* Delivery Options */}
                 <div className="mt-5 pt-5 border-t border-white/5">
-                  <p className="text-[var(--text-muted)] text-[10px] tracking-wider uppercase mb-3 text-center">Ou commander sur</p>
+                  <p className="text-[var(--text-muted)] text-[10px] tracking-wider uppercase mb-4 text-center">Ou commandez via</p>
                   <div className="flex gap-3">
                     <a
                       href="https://www.ubereats.com/fr/paris/food-delivery/prestigeflow"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 flex items-center justify-center gap-2 p-3 bg-[#06C167]/10 border border-[#06C167]/20 rounded-lg hover:bg-[#06C167]/20 transition-colors"
+                      className="group flex-1 relative"
                     >
-                      <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Uber_Eats_2020.svg/240px-Uber_Eats_2020.svg.png"
-                        alt="Uber Eats"
-                        className="w-6 h-6 object-contain"
-                      />
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#06C167]/20 to-[#06C167]/0 blur-lg rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <div className="relative flex items-center justify-center gap-2 p-3.5 bg-gradient-to-br from-[#06C167]/10 to-[#06C167]/5 border border-[#06C167]/20 rounded-xl hover:border-[#06C167]/40 hover:scale-105 transition-all duration-300">
+                        <img
+                          src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Uber_Eats_2020.svg/240px-Uber_Eats_2020.svg.png"
+                          alt="Uber Eats"
+                          className="w-6 h-6 object-contain"
+                        />
+                      </div>
                     </a>
                     <a
                       href="https://www.deliveroo.fr/fr/menu/paris/prestigeflow"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 flex items-center justify-center gap-2 p-3 bg-[#00CCBC]/10 border border-[#00CCBC]/20 rounded-lg hover:bg-[#00CCBC]/20 transition-colors"
+                      className="group flex-1 relative"
                     >
-                      <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Deliveroo_logo.svg/240px-Deliveroo_logo.svg.png"
-                        alt="Deliveroo"
-                        className="w-6 h-6 object-contain"
-                      />
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#00CCBC]/20 to-[#00CCBC]/0 blur-lg rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <div className="relative flex items-center justify-center gap-2 p-3.5 bg-gradient-to-br from-[#00CCBC]/10 to-[#00CCBC]/5 border border-[#00CCBC]/20 rounded-xl hover:border-[#00CCBC]/40 hover:scale-105 transition-all duration-300">
+                        <img
+                          src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Deliveroo_logo.svg/240px-Deliveroo_logo.svg.png"
+                          alt="Deliveroo"
+                          className="w-6 h-6 object-contain"
+                        />
+                      </div>
                     </a>
                   </div>
                 </div>

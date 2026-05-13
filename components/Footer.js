@@ -103,12 +103,13 @@ export default function Footer() {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-3 p-3 bg-white/[0.02] rounded-lg hover:bg-white/[0.06] transition-all duration-300"
+                  className="group relative flex items-center gap-3 p-4 bg-white/[0.02] rounded-xl hover:bg-white/[0.06] transition-all duration-300 overflow-hidden"
                 >
-                  <div className={`w-10 h-10 flex items-center justify-center rounded-lg transition-all ${
+                  <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className={`relative w-11 h-11 flex items-center justify-center rounded-xl transition-all shadow-lg ${
                     link.name === 'Uber Eats'
-                      ? 'bg-[#06C167]/20 group-hover:bg-[#06C167]'
-                      : 'bg-[#00CCBC]/20 group-hover:bg-[#00CCBC]'
+                      ? 'bg-gradient-to-br from-[#06C167] to-[#00A854]'
+                      : 'bg-gradient-to-br from-[#00CCBC] to-[#00B5A6]'
                   }`}>
                     {link.name === 'Uber Eats' ? (
                       <img
@@ -124,9 +125,14 @@ export default function Footer() {
                       />
                     )}
                   </div>
-                  <div className="flex-1">
-                    <span className="text-white text-sm font-medium block">{link.name}</span>
-                    <span className="text-[var(--text-tertiary)] text-xs">Commander &rarr;</span>
+                  <div className="relative flex-1">
+                    <span className="text-white text-sm font-medium block group-hover:translate-x-1 transition-transform">{link.name}</span>
+                    <span className="text-[var(--text-tertiary)] text-xs flex items-center gap-1">
+                      Commander
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-0.5 transition-transform">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                      </svg>
+                    </span>
                   </div>
                 </a>
               ))}

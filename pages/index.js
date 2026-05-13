@@ -538,57 +538,189 @@ export default function Home() {
       </ParallaxSection>
 
       {/* ══════════ DELIVERY PLATFORMS ══════════ */}
-      <section className="section-padding bg-[var(--noir-light)] border-y border-white/5">
-        <div className="max-w-4xl mx-auto px-4 md:px-6 text-center w-full">
+      <section className="section-padding bg-[var(--noir)] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-[var(--gold)]/10 to-transparent blur-[150px]" />
+          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-[var(--gold)]/5 to-transparent blur-[120px]" />
+        </div>
+
+        <div className="max-w-6xl mx-auto px-4 md:px-6 text-center w-full relative z-10">
           <Reveal>
-            <div className="inline-flex items-center gap-2 mb-6">
-              <div className="w-12 h-[1px] bg-[var(--gold)]" />
-              <span className="text-[var(--gold)] text-[10px] tracking-[0.4em] uppercase">Livraison à domicile</span>
-              <div className="w-12 h-[1px] bg-[var(--gold)]" />
-            </div>
-            <h2 className="font-display text-2xl md:text-3xl lg:text-[4rem] text-white mt-4 mb-4">
-              Commandez sur nos <span className="italic text-gradient-gold">partenaires</span>
-            </h2>
-            <p className="text-[var(--text-secondary)] leading-relaxed mb-12 text-[15px] px-2 max-w-2xl mx-auto">
-              Profitez de nos créations culinaires d&apos;exception chez vous grâce à nos partenaires de livraison premium.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-8">
-              <a
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="inline-flex items-center gap-3 mb-8 px-6 py-2 rounded-full border border-[var(--gold)]/20 bg-[var(--gold)]/5"
+            >
+              <span className="w-2 h-2 bg-[var(--gold)] rounded-full animate-pulse" />
+              <span className="text-[var(--gold)] text-[10px] tracking-[0.4em] uppercase">Livraison Express Disponible</span>
+              <span className="w-2 h-2 bg-[var(--gold)] rounded-full animate-pulse" />
+            </motion.div>
+
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className="font-display text-3xl md:text-4xl lg:text-[4.5rem] text-white mb-4 leading-[1.05]"
+            >
+              L'excellence,<br/><span className="italic text-gradient-gold">livrée chez vous</span>
+            </motion.h2>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+              className="text-[var(--text-secondary)] leading-relaxed mb-16 text-[15px] max-w-2xl mx-auto"
+            >
+              Découvrez nos créations gastronomiques sans quitter votre chez-vous.<br/>
+              Une expérience PrestigeFlow, où que vous soyez.
+            </motion.p>
+
+            <div className="flex flex-col md:flex-row gap-6 justify-center items-stretch mb-12">
+              <motion.a
                 href="https://www.ubereats.com/fr/paris/food-delivery/prestigeflow"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center justify-center gap-4 px-10 py-6 bg-gradient-to-br from-[#06C167] to-[#00A854] rounded-2xl hover:scale-105 hover:shadow-[0_8px_30px_rgba(6,193,103,0.3)] transition-all duration-300"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, duration: 0.6 }}
+                whileHover={{ y: -8, scale: 1.02 }}
+                className="group relative flex-1 max-w-md"
               >
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Uber_Eats_2020.svg/240px-Uber_Eats_2020.svg.png"
-                  alt="Uber Eats"
-                  className="h-9 object-contain"
-                />
-                <div className="text-left">
-                  <span className="text-white text-lg font-semibold block">Uber Eats</span>
-                  <span className="text-white/80 text-xs">Commander maintenant</span>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#06C167]/30 to-[#06C167]/0 blur-2xl rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative h-full min-h-[280px] bg-gradient-to-br from-white/[0.03] to-white/[0.01] border border-white/10 rounded-3xl overflow-hidden hover:border-[#06C167]/30 transition-all duration-500 flex flex-col">
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#06C167] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                  <div className="flex-1 flex flex-col items-center justify-center p-10">
+                    <motion.div
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      transition={{ type: 'spring', stiffness: 300 }}
+                      className="relative"
+                    >
+                      <div className="absolute inset-0 bg-[#06C167]/20 blur-2xl rounded-full" />
+                      <div className="relative w-24 h-24 bg-gradient-to-br from-[#06C167] to-[#00A854] rounded-2xl flex items-center justify-center shadow-[0_8px_30px_rgba(6,193,103,0.3)]">
+                        <img
+                          src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Uber_Eats_2020.svg/240px-Uber_Eats_2020.svg.png"
+                          alt="Uber Eats"
+                          className="w-16 h-16 object-contain"
+                        />
+                      </div>
+                    </motion.div>
+
+                    <h3 className="font-display text-2xl text-white mt-8 mb-2">Uber Eats</h3>
+                    <p className="text-[var(--text-tertiary)] text-sm mb-6">Livraison rapide & fiable</p>
+
+                    <div className="flex items-center gap-4 text-xs text-[var(--text-muted)]">
+                      <span className="flex items-center gap-1.5">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" className="text-[#06C167]"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        4.9/5
+                      </span>
+                      <span className="flex items-center gap-1.5">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                        30-45 min
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="p-6 bg-white/[0.02] border-t border-white/5">
+                    <span className="flex items-center justify-center gap-2 text-[#06C167] font-semibold tracking-wide text-sm group-hover:gap-3 transition-all">
+                      Commander maintenant
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                      </svg>
+                    </span>
+                  </div>
                 </div>
-              </a>
-              <a
+              </motion.a>
+
+              <motion.a
                 href="https://www.deliveroo.fr/fr/menu/paris/prestigeflow"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center justify-center gap-4 px-10 py-6 bg-gradient-to-br from-[#00CCBC] to-[#00B5A6] rounded-2xl hover:scale-105 hover:shadow-[0_8px_30px_rgba(0,204,188,0.3)] transition-all duration-300"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5, duration: 0.6 }}
+                whileHover={{ y: -8, scale: 1.02 }}
+                className="group relative flex-1 max-w-md"
               >
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Deliveroo_logo.svg/240px-Deliveroo_logo.svg.png"
-                  alt="Deliveroo"
-                  className="h-9 object-contain"
-                />
-                <div className="text-left">
-                  <span className="text-white text-lg font-semibold block">Deliveroo</span>
-                  <span className="text-white/80 text-xs">Commander maintenant</span>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#00CCBC]/30 to-[#00CCBC]/0 blur-2xl rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative h-full min-h-[280px] bg-gradient-to-br from-white/[0.03] to-white/[0.01] border border-white/10 rounded-3xl overflow-hidden hover:border-[#00CCBC]/30 transition-all duration-500 flex flex-col">
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#00CCBC] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                  <div className="flex-1 flex flex-col items-center justify-center p-10">
+                    <motion.div
+                      whileHover={{ scale: 1.1, rotate: -5 }}
+                      transition={{ type: 'spring', stiffness: 300 }}
+                      className="relative"
+                    >
+                      <div className="absolute inset-0 bg-[#00CCBC]/20 blur-2xl rounded-full" />
+                      <div className="relative w-24 h-24 bg-gradient-to-br from-[#00CCBC] to-[#00B5A6] rounded-2xl flex items-center justify-center shadow-[0_8px_30px_rgba(0,204,188,0.3)]">
+                        <img
+                          src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Deliveroo_logo.svg/240px-Deliveroo_logo.svg.png"
+                          alt="Deliveroo"
+                          className="w-16 h-16 object-contain"
+                        />
+                      </div>
+                    </motion.div>
+
+                    <h3 className="font-display text-2xl text-white mt-8 mb-2">Deliveroo</h3>
+                    <p className="text-[var(--text-tertiary)] text-sm mb-6">La qualité, livrée</p>
+
+                    <div className="flex items-center gap-4 text-xs text-[var(--text-muted)]">
+                      <span className="flex items-center gap-1.5">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" className="text-[#00CCBC]"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        4.8/5
+                      </span>
+                      <span className="flex items-center gap-1.5">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                        30-45 min
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="p-6 bg-white/[0.02] border-t border-white/5">
+                    <span className="flex items-center justify-center gap-2 text-[#00CCBC] font-semibold tracking-wide text-sm group-hover:gap-3 transition-all">
+                      Commander maintenant
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                      </svg>
+                    </span>
+                  </div>
                 </div>
-              </a>
+              </motion.a>
             </div>
-            <p className="text-[var(--text-muted)] text-xs tracking-wider">
-              <span className="text-[var(--gold)]">★</span> Service premium · Livraison rapide · Qualité préservée
-            </p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.6, duration: 0.8 }}
+              className="flex flex-wrap items-center justify-center gap-8 text-[var(--text-muted)] text-xs tracking-wider"
+            >
+              <span className="flex items-center gap-2">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-[var(--gold)]">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+                Qualité préservée
+              </span>
+              <span className="flex items-center gap-2">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-[var(--gold)]">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                </svg>
+                Livraison rapide
+              </span>
+              <span className="flex items-center gap-2">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-[var(--gold)]">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+                Service premium
+              </span>
+            </motion.div>
           </Reveal>
         </div>
       </section>

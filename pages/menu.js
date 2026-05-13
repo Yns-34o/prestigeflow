@@ -211,50 +211,116 @@ export default function MenuPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mt-16 pt-10 border-t border-white/5"
+            className="mt-20 pt-12 border-t border-white/5"
           >
-            <div className="text-center mb-8">
-              <div className="inline-flex items-center gap-2 mb-4">
-                <div className="w-10 h-[1px] bg-[var(--gold)]" />
-                <span className="text-[var(--gold)] text-[10px] tracking-[0.4em] uppercase">Livraison à domicile</span>
-                <div className="w-10 h-[1px] bg-[var(--gold)]" />
-              </div>
-              <h3 className="font-display text-2xl text-white mb-2">Commandez sur nos partenaires</h3>
-              <p className="text-[var(--text-secondary)] text-sm">Nos créations livrées chez vous en un clic</p>
+            <div className="text-center mb-10">
+              <motion.div
+                initial={{ scale: 0.9, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-[var(--gold)]/20 bg-[var(--gold)]/5 mb-6"
+              >
+                <span className="w-1.5 h-1.5 bg-[var(--gold)] rounded-full animate-pulse" />
+                <span className="text-[var(--gold)] text-[10px] tracking-[0.3em] uppercase">Livraison Express</span>
+                <span className="w-1.5 h-1.5 bg-[var(--gold)] rounded-full animate-pulse" />
+              </motion.div>
+              <h3 className="font-display text-2xl md:text-3xl text-white mb-3">
+                L'excellence,<br/><span className="italic text-[var(--gold)]">livrée chez vous</span>
+              </h3>
+              <p className="text-[var(--text-secondary)] text-sm max-w-md mx-auto">Nos créations gastronomiques, directement chez vous en 30-45 minutes</p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-5 justify-center max-w-2xl mx-auto">
-              <a
+
+            <div className="flex flex-col sm:flex-row gap-5 justify-center max-w-3xl mx-auto">
+              <motion.a
                 href="https://www.ubereats.com/fr/paris/food-delivery/prestigeflow"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center justify-center gap-4 px-8 py-5 bg-gradient-to-br from-[#06C167] to-[#00A854] rounded-xl hover:scale-105 hover:shadow-[0_6px_20px_rgba(6,193,103,0.25)] transition-all duration-300"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1, duration: 0.5 }}
+                whileHover={{ y: -6, scale: 1.02 }}
+                className="group relative flex-1"
               >
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Uber_Eats_2020.svg/240px-Uber_Eats_2020.svg.png"
-                  alt="Uber Eats"
-                  className="h-8 object-contain"
-                />
-                <div className="text-left">
-                  <span className="text-white font-semibold block">Uber Eats</span>
-                  <span className="text-white/80 text-xs">Commander</span>
+                <div className="absolute inset-0 bg-[#06C167]/20 blur-xl rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
+                <div className="relative bg-gradient-to-br from-white/[0.03] to-white/[0.01] border border-white/10 rounded-2xl overflow-hidden hover:border-[#06C167]/40 transition-all duration-400">
+                  <div className="p-6 text-center">
+                    <motion.div
+                      whileHover={{ scale: 1.1, rotate: 8 }}
+                      transition={{ type: 'spring', stiffness: 300 }}
+                      className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-[#06C167] to-[#00A854] rounded-xl flex items-center justify-center shadow-lg shadow-[#06C167]/20"
+                    >
+                      <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Uber_Eats_2020.svg/240px-Uber_Eats_2020.svg.png"
+                        alt="Uber Eats"
+                        className="w-11 h-11 object-contain"
+                      />
+                    </motion.div>
+                    <h4 className="font-display text-xl text-white mb-1">Uber Eats</h4>
+                    <p className="text-[var(--text-tertiary)] text-xs mb-4">Livraison rapide</p>
+                    <div className="flex items-center justify-center gap-3 text-[11px] text-[var(--text-muted)] mb-5">
+                      <span className="flex items-center gap-1">
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" className="text-[#06C167]"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        4.9
+                      </span>
+                      <span>•</span>
+                      <span>30-45 min</span>
+                    </div>
+                    <span className="inline-flex items-center gap-2 text-[#06C167] font-semibold text-sm group-hover:gap-3 transition-all">
+                      Commander
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-0.5 transition-transform">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                      </svg>
+                    </span>
+                  </div>
                 </div>
-              </a>
-              <a
+              </motion.a>
+
+              <motion.a
                 href="https://www.deliveroo.fr/fr/menu/paris/prestigeflow"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center justify-center gap-4 px-8 py-5 bg-gradient-to-br from-[#00CCBC] to-[#00B5A6] rounded-xl hover:scale-105 hover:shadow-[0_6px_20px_rgba(0,204,188,0.25)] transition-all duration-300"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+                whileHover={{ y: -6, scale: 1.02 }}
+                className="group relative flex-1"
               >
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Deliveroo_logo.svg/240px-Deliveroo_logo.svg.png"
-                  alt="Deliveroo"
-                  className="h-8 object-contain"
-                />
-                <div className="text-left">
-                  <span className="text-white font-semibold block">Deliveroo</span>
-                  <span className="text-white/80 text-xs">Commander</span>
+                <div className="absolute inset-0 bg-[#00CCBC]/20 blur-xl rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
+                <div className="relative bg-gradient-to-br from-white/[0.03] to-white/[0.01] border border-white/10 rounded-2xl overflow-hidden hover:border-[#00CCBC]/40 transition-all duration-400">
+                  <div className="p-6 text-center">
+                    <motion.div
+                      whileHover={{ scale: 1.1, rotate: -8 }}
+                      transition={{ type: 'spring', stiffness: 300 }}
+                      className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-[#00CCBC] to-[#00B5A6] rounded-xl flex items-center justify-center shadow-lg shadow-[#00CCBC]/20"
+                    >
+                      <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Deliveroo_logo.svg/240px-Deliveroo_logo.svg.png"
+                        alt="Deliveroo"
+                        className="w-11 h-11 object-contain"
+                      />
+                    </motion.div>
+                    <h4 className="font-display text-xl text-white mb-1">Deliveroo</h4>
+                    <p className="text-[var(--text-tertiary)] text-xs mb-4">La qualité livrée</p>
+                    <div className="flex items-center justify-center gap-3 text-[11px] text-[var(--text-muted)] mb-5">
+                      <span className="flex items-center gap-1">
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" className="text-[#00CCBC]"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        4.8
+                      </span>
+                      <span>•</span>
+                      <span>30-45 min</span>
+                    </div>
+                    <span className="inline-flex items-center gap-2 text-[#00CCBC] font-semibold text-sm group-hover:gap-3 transition-all">
+                      Commander
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-0.5 transition-transform">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                      </svg>
+                    </span>
+                  </div>
                 </div>
-              </a>
+              </motion.a>
             </div>
           </motion.div>
         </div>

@@ -234,32 +234,36 @@ export default function Navbar() {
             {/* Right: Actions */}
             <div className="flex items-center gap-3 flex-shrink-0">
               {/* Delivery Buttons */}
-              <div className="hidden xl:flex items-center gap-2 pr-3 border-r border-white/10">
+              <div className="hidden xl:flex items-center gap-2">
                 <a
                   href="https://www.ubereats.com/fr/paris/food-delivery/prestigeflow"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group p-2 rounded-lg hover:bg-white/5 transition-colors"
+                  className="group relative p-2 rounded-xl hover:bg-white/5 transition-all"
                   title="Commander sur Uber Eats"
                 >
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Uber_Eats_2020.svg/240px-Uber_Eats_2020.svg.png"
-                    alt="Uber Eats"
-                    className="w-8 h-8 object-contain opacity-80 group-hover:opacity-100 transition-opacity"
-                  />
+                  <div className="w-9 h-9 bg-gradient-to-br from-[#06C167]/15 to-[#06C167]/5 rounded-lg flex items-center justify-center group-hover:from-[#06C167]/25 group-hover:to-[#06C167]/10 transition-all">
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Uber_Eats_2020.svg/240px-Uber_Eats_2020.svg.png"
+                      alt="Uber Eats"
+                      className="w-6 h-6 object-contain opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all"
+                    />
+                  </div>
                 </a>
                 <a
                   href="https://www.deliveroo.fr/fr/menu/paris/prestigeflow"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group p-2 rounded-lg hover:bg-white/5 transition-colors"
+                  className="group relative p-2 rounded-xl hover:bg-white/5 transition-all"
                   title="Commander sur Deliveroo"
                 >
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Deliveroo_logo.svg/240px-Deliveroo_logo.svg.png"
-                    alt="Deliveroo"
-                    className="w-8 h-8 object-contain opacity-80 group-hover:opacity-100 transition-opacity"
-                  />
+                  <div className="w-9 h-9 bg-gradient-to-br from-[#00CCBC]/15 to-[#00CCBC]/5 rounded-lg flex items-center justify-center group-hover:from-[#00CCBC]/25 group-hover:to-[#00CCBC]/10 transition-all">
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Deliveroo_logo.svg/240px-Deliveroo_logo.svg.png"
+                      alt="Deliveroo"
+                      className="w-6 h-6 object-contain opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all"
+                    />
+                  </div>
                 </a>
               </div>
 
