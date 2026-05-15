@@ -102,15 +102,15 @@ export default function GalleryPage() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 auto-rows-[180px] sm:auto-rows-[200px] md:auto-rows-[250px]"
+              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 auto-rows-[300px] sm:auto-rows-[350px] md:auto-rows-[400px]"
             >
               {filtered.map((img, i) => (
                 <Reveal key={i} delay={i * 0.04}>
                   <div
-                    className={`gallery-item ${img.span} cursor-pointer`}
+                    className={`gallery-item ${img.span || ''} cursor-pointer`}
                     onClick={() => openLightbox(i)}
                   >
-                    <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
+                    <img src={img.src} alt={img.alt} className="w-full min-h-full object-cover" />
                     <div className="gallery-overlay flex-col gap-2">
                       <span className="text-white text-sm font-display">{img.alt}</span>
                       <span className="text-[var(--gold)] text-[10px] tracking-[0.2em] uppercase">{img.category}</span>

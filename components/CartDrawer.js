@@ -66,7 +66,7 @@ export default function CartDrawer() {
                       className="flex gap-3 p-3 bg-white/[0.02] rounded-lg hover:bg-white/[0.04] transition-colors"
                     >
                       <div className="w-16 h-16 flex-shrink-0 overflow-hidden rounded-md">
-                        <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                        <img src={item.img || item.image} alt={item.name} className="w-full h-full object-cover" />
                       </div>
                       <div className="flex-1 min-w-0 flex flex-col justify-between">
                         <div className="flex items-start justify-between">
